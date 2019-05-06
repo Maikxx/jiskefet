@@ -13,6 +13,8 @@
 
 You can find the atomic design principles [here](./client/Atomic.md).
 
+The port that now opens is `localhost:1234`.
+
 ## License
 
 This repository is licensed as [MIT](LICENSE) by [Maikel van Veen](https://github.com/maikxx).
