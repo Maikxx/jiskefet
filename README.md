@@ -9,7 +9,7 @@
 * Navigate into the directory: `cd jiskefet`
 * Install dependencies: `yarn` or `npm install`
 * Start the server with: `yarn start-server` or `npm run start-server`
-* Build the server with `yarn build-server` or `npm run build-server`
+<!-- * Build the server with `yarn build-server` or `npm run build-server` -->
 
 You can find the atomic design principles [here](./client/Atomic.md).
 
