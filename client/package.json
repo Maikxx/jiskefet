@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "parcel build index.html --no-source-maps",
-    "start-client": "parcel index.html --no-source-maps"
+    "start-client": "parcel index.html **/*.scss **/*.tsx --no-source-maps"
   },
   "devDependencies": {
     "@types/react": "^16.8.16",
