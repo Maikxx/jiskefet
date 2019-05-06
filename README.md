@@ -11,9 +11,13 @@
 * Start the server with: `yarn start-server` or `npm run start-server`
 <!-- * Build the server with `yarn build-server` or `npm run build-server` -->
 
-You can find the atomic design principles [here](./client/Atomic.md).
-
 The port that now opens is `localhost:1234`.
+
+## Docs
+
+* You can find the atomic design principles [here](./docs/ATOMIC.md).
+* You can view the project overview [here](./docs/PROJECT_OVERVIEW.md).
+
 
 ## License
 
