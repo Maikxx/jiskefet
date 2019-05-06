@@ -18,7 +18,7 @@
     "sass": "^1.20.1",
     "tslint": "^5.15.0",
     "tslint-eslint-rules": "^5.4.0",
-    "typescript": "^3.4.2"
+    "typescript": "^3.4.5"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",

@@ -10,7 +10,11 @@
         "start-server": "cd server && yarn start-server"
     },
     "contributors": [
-        {"name": "Chelsea Doeleman"},
-        {"name": "Robin Stut"}
+        {
+            "name": "Chelsea Doeleman"
+        },
+        {
+            "name": "Robin Stut"
+        }
     ]
 }
