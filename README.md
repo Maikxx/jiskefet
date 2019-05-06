@@ -8,7 +8,7 @@
 * Clone the repository: `git clone git@github.com:Maikxx/jiskefet.git`
 * Navigate into the directory: `cd jiskefet`
 * Install dependencies: `yarn` or `npm install`
-* Start the server with: `yarn start-server` or `npm run start-server`
+* Start the client with: `yarn start-client` or `npm run start-client`
 <!-- * Build the server with `yarn build-server` or `npm run build-server` -->
 
 The port that now opens is `localhost:1234`.
