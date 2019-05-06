@@ -3,7 +3,7 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 
 const App: React.SFC = () => (
-    <div>Hoi</div>
+    <div>This is React</div>
 )
 
 ReactDOM.render(<App />, document.getElementById('react-root'))
