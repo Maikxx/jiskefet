@@ -6,9 +6,6 @@
     "author": "Maikel van Veen <maikeloo10@hotmail.com>",
     "license": "MIT",
     "scripts": {
-        "start-client": "cd client && yarn start-client"
-    },
-    "devDependencies": {
-        "yarn": "^1.15.2"
+        "start-client": "cd client && npm run start-client"
     }
 }
