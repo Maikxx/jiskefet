@@ -10,6 +10,13 @@
 * Install dependencies: `yarn` or `npm install`
 * Start the client with: `yarn start-client` or `npm run start-client`
 * Build the server with `yarn build-server` or `npm run build-server`
+
+You may have perform the following steps if you get errors running the commands above:
+
+* `npm install typescript -g`
+* `npm install ts-node-dev -g`
+* `npm install parcel-bundler -g`
+
 * Rename the process environment file to `.env` by doing `cp ./server/.env.example ./server/.env`
 
 The port that now opens is `localhost:1234`.
