@@ -1,68 +1,56 @@
 console.log('working');
 
-// var btn = document.querySelector(".sai");
-// var getText = document.querySelector(".getText");
-// var content = document.querySelector(".getcontent");
-// var editorContent = document.querySelector(".editor");
+const form = document.getElementById('form')
+const output = document.getElementById('markdownOutput')
+form.addEventListener('submit', function (e) {
+    e.preventDefault()
+    const searchValue = document.getElementsByClassName('editor')[0];
+    var newValue = String(searchValue.innerHTML)
+    newValue = convBold(newValue)
+    newValue = convItalic(newValue)
+    newValue = convStrikethrough(newValue)
+    newValue = convHeading(newValue)
+    output.innerHTML = (newValue);
+})
 
-// btn.addEventListener("click", function () {
-//     var s = editorContent.innerHTML;
-//     content.style.display = "block";
-//     content.textContent = s;
-// });
+function convBold(input) {
+    rx = /(<[/]*b>)/g
+    let get = input.replace(rx, (...x) => {
+        return `**`;
+    });
+    return get;
+}
 
-// getText.addEventListener("click", function () {
-//     const old = editorContent.textContent;
-//     content.style.display = "block";
-//     content.textContent = old;
-// });
+function convItalic(input) {
+    rx = /(<[/]*i>)/g
+    let get = input.replace(rx, (...x) => {
+        return `*`;
+    });
+    return get;
+}
 
-// function printMe() {
-//     if (confirm("Check your Content before print")) {
-//         const body = document.body;
-//         let s = body.innerHTML;
-//         body.textContent = editorContent.innerHTML;
+function convStrikethrough(input) {
+    rx = /(<[/]*strike>)/g
+    let get = input.replace(rx, (...x) => {
+        return `~~`;
+    });
+    return get;
+}
 
-//         document.execCommandShowHelp;
-//         body.style.whiteSpace = "pre";
-//         window.print();
-//         location.reload();
-//     }
-// }
-
-
-
-// var input = document.getElementById('test-input');
-// setCaretPosition(input, input.value.length);
-
-// function setCaretPosition(input, inputLength) {
-//     console.log(input);
-//     console.log(inputLength);
-
-//     if (input.setSelectionRange) {
-//         input.focus();
-//         input.setSelectionRange(inputLength, inputLength);
-
-//     } else if (input.createTextRange) {
-//         var range = input.createTextRange();
-//         range.collapse(true);
-//         range.moveEnd('character', inputLength);
-//         range.moveStart('character', inputLength);
-//         range.select();
-
-//     }
-// }
-
-// setInterval(function inputChange() {
-//     var value = document.getElementsByClassName('editor')[0]
-//     console.log(value.innerHTML);
-// }, 5000);
-
-
-
-// function foo() {
-//     var selObj = window.getSelection();
-//     console.log(selObj);
-//     // var selRange = selObj.getRangeAt(0);
-//     // do stuff with the range
-// }
+function convHeading(input) {
+    rx1 = /(<h)([1-6])(>)/g
+    rx2 = /(<\/h[1-6]>)/g
+    let get = input.replace(rx1, (...x) => {
+        var count = Number(x[2])
+        var hash = "";
+        for (var i = 0; i < count; i++) {
+            hash = hash + '#';
+            console.log(hash);
+        }
+        return `${hash}`;
+    });
+    let rem = get.replace(rx2, (...x) => {
+        return ``;
+    });
+    return rem;
+}

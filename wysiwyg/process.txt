@@ -13,7 +13,7 @@ document.execCommand("underline", false, null)
 rx = (<[/]*u>)
 
 document.execCommand("strikeThrough", false, null)
-rx = (<[/]*del>)
+rx = (<[/]*strike>)
 
 ## Lists
 document.execCommand("insertorderedlist");
