@@ -2,6 +2,13 @@ import 'babel-polyfill'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import { Wysiwig } from './components/organisms/Wysiwyg'
+import socketIO from 'socket.io-client'
+
+const io = socketIO('http://localhost:3000')
+
+io.on('connect', () => {
+    console.info('Socket connection established')
+})
 
 const App: React.SFC = () => (
     <div>
