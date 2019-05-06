@@ -13,11 +13,19 @@
 
 The port that now opens is `localhost:1234`.
 
+### Folder structure
+
+Both the clients `src/sass` and `src/scripts` folders should have the following structure:
+
+* components
+    * atoms
+    * molecules
+    * organisms
+
 ## Docs
 
 * You can find the atomic design principles [here](./docs/ATOMIC.md).
 * You can view the project overview [here](./docs/PROJECT_OVERVIEW.md).
-
 
 ## License
 
