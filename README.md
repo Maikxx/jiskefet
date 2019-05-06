@@ -9,7 +9,8 @@
 * Navigate into the directory: `cd jiskefet`
 * Install dependencies: `yarn` or `npm install`
 * Start the client with: `yarn start-client` or `npm run start-client`
-<!-- * Build the server with `yarn build-server` or `npm run build-server` -->
+* Build the server with `yarn build-server` or `npm run build-server`
+* Rename the process environment file to `.env` by doing `cp ./server/.env.example ./server/.env`
 
 The port that now opens is `localhost:1234`.
 
