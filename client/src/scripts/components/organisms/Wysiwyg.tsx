@@ -17,7 +17,7 @@ export class Wysiwig extends React.Component<Props, State> {
         const { currentValue } = this.state
 
         return (
-            <div className={`Wysiwig`}>
+            <div className={`Wysiwyg`}>
                 <WysiwygToolbar />
                 <WysiwygForm onSubmit={this.onSubmitForm}/>
                 <section dangerouslySetInnerHTML={{ __html: currentValue }}></section>

@@ -1,4 +1,10 @@
 .WysiwygForm {
     background-color: #324858;
     color: #ffffff;
+
+    fieldset{
+        height: 65vh;
+        border: none;
+        border-radius: .5em;
+    }
 }
