@@ -14,17 +14,18 @@ io.on('connect', () => {
 const App: React.SFC = () => (
     <div>
         <h1>CREATE A NEW LOG</h1>
-        <form action=''>
+        <div>
             <label htmlFor=''>
                 <input type='text' placeholder='Add a title for this log'/>
             </label>
 
             <Wysiwig />
+
             <CreateTag categories={[ 'Subsystem', 'Runtype', 'HLT-mode', 'Class' ]}/>
             {/* Here comes add attachment organism */}
 
             <button type='submit'>ADD NEW LOG</button>
-        </form>
+        </div>
     </div>
 )
 
