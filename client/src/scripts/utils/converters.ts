@@ -66,7 +66,7 @@ export function convOl(input: string) {
     const parent = input.replace(rx1, (...x) => {
         const li1 = x[0].replace(rx2, '')
 
-        const li2 = li1.replace(rx3, (...r2) => {
+        const li2 = li1.replace(rx3, () => {
             liCount += 1
             return `${liCount}.`
         })
@@ -83,4 +83,20 @@ export function convA(input: string) {
     const rx1 = /(<a href=")(.*)(">)(.*)(<\/a>)/g
     const get = input.replace(rx1, (...x) => `[${x[2]}](${x[2]})`)
     return get
+}
+
+export function convImg(input: string) {
+    const rx1 = /(<img src=")(.*)(" alt="">)/g
+    const get = input.replace(rx1, (...x) => `![${x[2]}]`)
+
+    return get
+}
+
+export function convBq(input: string) {
+    const rx1 = /(<blockquote>)/g
+    const rx2 = /(<\/blockquote>)/g
+    const get = input.replace(rx1, '> ')
+    const rem = get.replace(rx2, '')
+
+    return rem
 }

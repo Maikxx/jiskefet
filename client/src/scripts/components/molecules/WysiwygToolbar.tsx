@@ -23,6 +23,9 @@ export class WysiwygToolbar extends React.Component<Props> {
                 <WysiwygToolbarButton type={`insertOrderedList`}/>
                 <WysiwygToolbarButton type={`insertUnorderedList`}/>
                 <WysiwygToolbarButton type={`link`}/>
+                <WysiwygToolbarButton type={`image`}/>
+                <WysiwygToolbarButton type={`formatBlock`} isForQuote={true}/>
+                <WysiwygToolbarButton type={`insertHorizontalRule`}/>
             </header>
         )
     }

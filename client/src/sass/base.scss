@@ -49,16 +49,6 @@ ol, ul {
     padding: 0;
 }
 
-blockquote, q {
-	quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-
 html {
     box-sizing: border-box;
 }

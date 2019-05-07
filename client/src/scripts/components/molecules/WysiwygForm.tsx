@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { convBold, convItalic, convStrikethrough, convHeading, convUl, convOl, convA } from '../../utils/converters'
+import { convBold, convItalic, convStrikethrough, convHeading, convUl, convOl, convA, convImg, convBq } from '../../utils/converters'
 
 interface Props {
     className?: string
@@ -41,6 +41,8 @@ export class WysiwygForm extends React.Component<Props> {
             newValue = convUl(newValue)
             newValue = convOl(newValue)
             newValue = convA(newValue)
+            newValue = convImg(newValue)
+            newValue = convBq(newValue)
 
             onSubmit(newValue)
         }

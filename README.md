@@ -35,6 +35,11 @@ Both the clients `src/sass` and `src/scripts` folders should have the following 
 * You can find the atomic design principles [here](./docs/ATOMIC.md).
 * You can view the project overview [here](./docs/PROJECT_OVERVIEW.md).
 
+## Issues
+
+* Horizontal line styling
+* Blockquote styling
+
 ## License
 
 This repository is licensed as [MIT](LICENSE) by [Maikel van Veen](https://github.com/maikxx).
