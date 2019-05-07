@@ -1,17 +1,13 @@
 export function convBold(input: string) {
     const rx = /(<[/]*b>)/g
-    const get = input.replace(rx, (...x) => {
-        return `**`
-    })
+    const get = input.replace(rx, '**')
     return get
 }
 
 export function convItalic(input: string) {
     const rx = /(<[/]*i>)/g
 
-    const get = input.replace(rx, (...x) => {
-        return `*`
-    })
+    const get = input.replace(rx, '*')
 
     return get
 }
@@ -19,9 +15,7 @@ export function convItalic(input: string) {
 export function convStrikethrough(input: string) {
     const rx = /(<[/]*strike>)/g
 
-    const get = input.replace(rx, (...x) => {
-        return `~~`
-    })
+    const get = input.replace(rx, '~~')
 
     return get
 }
@@ -41,9 +35,7 @@ export function convHeading(input: string) {
         return hash
     })
 
-    const rem = get.replace(rx2, (...x) => {
-        return ``
-    })
+    const rem = get.replace(rx2, '')
 
     return rem
 }
