@@ -21,6 +21,7 @@ form.addEventListener('submit', function (e) {
     newValue = convA(newValue)
     newValue = convImg(newValue)
     newValue = convBq(newValue)
+    console.log(newValue);
     output.innerHTML = newValue;
 })
 
@@ -119,9 +120,9 @@ function convOl(input) {
 }
 
 function convA(input) {
-    var rx1 = /(<a href=")(.*)(">)(.*)(<\/a>)/g
+    var rx1 = /(<div [\w\W]*)(<a href=")(.*)(">)(.*)(<\/a>)(<\/div>)/g
     let get = input.replace(rx1, (...x) => {
-        return `[${x[2]}]`;
+        return `[${x[3]}]`;
     });
     return get;
 }
@@ -154,7 +155,7 @@ function linkChange() {
         var newValue = String(inputValue.innerHTML)
 
         let get = newValue.replace(text, (...x) => {
-            return `<a href="${x[0]}">${x[0]}</a>`
+            return `<div contentEditable="false"><a href="${x[0]}">${x[0]}</a></div>`
         });
 
         inputValue.innerHTML = get
