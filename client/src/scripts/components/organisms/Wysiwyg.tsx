@@ -7,7 +7,7 @@ export class Wysiwig extends React.Component<Props> {
         return (
 
             <div className={`Wysiwig`}>
-                <input type="text" />
+                <input type='text' />
             </div>
 
         )
