@@ -11,7 +11,7 @@ export class CreateTag extends React.Component<Props> {
         const { categories } = this.props
 
         return (
-            <div className={`CreateTag`}>
+            <div className={`CreateTags`}>
                 <h2>ADD TAGS</h2>
 
                 <h3>ADD EXISTING TAG</h3>
@@ -26,7 +26,7 @@ export class CreateTag extends React.Component<Props> {
                         <select name='' id=''>
                         {categories && categories.map(category => {
                             return (
-                                <option value=''>{category}</option>
+                                <option key={category} value=''>{category}</option>
                             )
                         })}
                         </select>

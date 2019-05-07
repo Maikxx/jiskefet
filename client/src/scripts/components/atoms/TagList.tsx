@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-interface Props { 
+interface Props {
     category: string
     tags: any[]
 }
@@ -14,9 +14,9 @@ export class TagList extends React.Component<Props> {
             <div>
                 <h4>{category}</h4>
                 <ul>
-                    {tags.map(tag => {
+                    {tags.map((tag, key) => {
                         return (
-                            <li>
+                            <li key={key}>
                                 {tag}
                             </li>
                         )

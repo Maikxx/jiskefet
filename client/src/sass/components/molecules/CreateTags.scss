@@ -1,0 +1,25 @@
+.CreateTags {
+    ul {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    ul li {
+        display: block;
+        color: #1C2C38;
+        font-weight: bold;
+        padding: .75em;
+        border-radius: .35em;
+        background-color: #E88626;
+        margin: 1em;
+    }
+
+    button {
+        padding: 1em;
+        border-radius: .35em;
+        color: #1C2C38;
+        background-color: #E88626;
+        border: none;
+        font-weight: bold;
+    }
+}
