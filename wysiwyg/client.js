@@ -2,6 +2,10 @@ console.log('working');
 
 const form = document.getElementById('form')
 const output = document.getElementById('markdownOutput')
+var createLink = document.getElementById('createLink');
+createLink.onclick = inputChange;
+
+
 form.addEventListener('submit', function (e) {
     e.preventDefault()
     const searchValue = document.getElementsByClassName('editor')[0];
@@ -12,11 +16,12 @@ form.addEventListener('submit', function (e) {
     newValue = convHeading(newValue)
     newValue = convUl(newValue)
     newValue = convOl(newValue)
+    newValue = convA(newValue)
     output.innerHTML = (newValue);
 })
 
 function convBold(input) {
-    rx = /(<[/]*b>)/g
+    var rx = /(<[/]*b>)/g
     let get = input.replace(rx, (...x) => {
         return `**`;
     });
@@ -24,7 +29,7 @@ function convBold(input) {
 }
 
 function convItalic(input) {
-    rx = /(<[/]*i>)/g
+    var rx = /(<[/]*i>)/g
     let get = input.replace(rx, (...x) => {
         return `*`;
     });
@@ -32,7 +37,7 @@ function convItalic(input) {
 }
 
 function convStrikethrough(input) {
-    rx = /(<[/]*strike>)/g
+    var rx = /(<[/]*strike>)/g
     let get = input.replace(rx, (...x) => {
         return `~~`;
     });
@@ -40,8 +45,8 @@ function convStrikethrough(input) {
 }
 
 function convHeading(input) {
-    rx1 = /(<h)([1-6])(>)/g
-    rx2 = /(<\/h[1-6]>)/g
+    var rx1 = /(<h)([1-6])(>)/g
+    var rx2 = /(<\/h[1-6]>)/g
     let get = input.replace(rx1, (...x) => {
         var count = Number(x[2])
         var hash = "";
@@ -58,10 +63,10 @@ function convHeading(input) {
 }
 
 function convUl(input) {
-    rx1 = /(<ul>)(.*)(<\/ul>)/g
-    rx2 = /(<[\/]*ul>)/g
-    rx3 = /(<li>)/g
-    rx4 = /(<\/li>)/g
+    var rx1 = /(<ul>)(.*)(<\/ul>)/g
+    var rx2 = /(<[\/]*ul>)/g
+    var rx3 = /(<li>)/g
+    var rx4 = /(<\/li>)/g
 
     let parent = input.replace(rx1, (...x) => {
 
@@ -83,10 +88,10 @@ function convUl(input) {
 }
 
 function convOl(input) {
-    rx1 = /(<ol>)(.*)(<\/ol>)/g
-    rx2 = /(<[\/]*ol>)/g
-    rx3 = /(<li>)/g
-    rx4 = /(<\/li>)/g
+    var rx1 = /(<ol>)(.*)(<\/ol>)/g
+    var rx2 = /(<[\/]*ol>)/g
+    var rx3 = /(<li>)/g
+    var rx4 = /(<\/li>)/g
     var liCount = 0;
 
     let parent = input.replace(rx1, (...x) => {
@@ -109,14 +114,32 @@ function convOl(input) {
     return parent;
 }
 
+function convA(input) {
+    var rx1 = /(<a href=")(.*)(">)(.*)(<\/a>)/g
+    let get = input.replace(rx1, (...x) => {
+        return `[${x[2]}](${x[2]})`;
+    });
+    return get;
+}
 
 
-function getSelectionText() {
+
+function inputChange() {
     var text = "";
     if (window.getSelection) {
-        text = window.getSelection().toString();
+        text = String(window.getSelection());
+        const inputValue = document.getElementsByClassName('editor')[0];
+        var newValue = String(inputValue.innerHTML)
+
+        let get = newValue.replace(text, (...x) => {
+            return `<a href="${x[0]}">${x[0]}</a>`
+        });
+
+        inputValue.innerHTML = (get)
+
     } else if (document.selection && document.selection.type != "Control") {
         text = document.selection.createRange().text;
     }
+
     return text;
 }
