@@ -21,7 +21,7 @@
     },
     "include": [
         "**/*.ts",
-        "**/*.tsx", "src/scripts/utils/converters.js"
+        "**/*.tsx", "src/scripts/utils/converters.ts"
     ],
     "exclude": [
         "**/*.spec.ts",

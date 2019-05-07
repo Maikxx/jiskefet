@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { convBold, convItalic, convStrikethrough, convHeading } from '../../utils/converters.js'
+import { convBold, convItalic, convStrikethrough, convHeading } from '../../utils/converters'
 
 interface Props {
     className?: string
