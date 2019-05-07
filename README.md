@@ -19,7 +19,7 @@ You may have perform the following steps if you get errors running the commands 
 
 * Rename the process environment file to `.env` by doing `cp ./server/.env.example ./server/.env`
 
-The port that now opens is `localhost:1234`.
+The port that now opens is `localhost:3000`.
 
 ### Folder structure
 

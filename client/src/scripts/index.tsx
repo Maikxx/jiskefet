@@ -6,7 +6,7 @@ import { Attachment } from './components/organisms/Attachment'
 import { CreateTag } from './components/molecules/CreateTag'
 import socketIO from 'socket.io-client'
 
-const io = socketIO('http://localhost:3000')
+const io = socketIO()
 
 io.on('connect', () => {
     console.info('Socket connection established')
@@ -19,11 +19,8 @@ const App: React.SFC = () => (
             <label htmlFor=''>
                 <input type='text' placeholder='Add a title for this log'/>
             </label>
-
             <Wysiwig />
-
             <CreateTag />
-
             <Attachment />
 
             <button className='CreateLog' type='submit'>ADD NEW LOG</button>

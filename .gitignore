@@ -3,6 +3,7 @@ node_modules/
 dist/
 .env
 .cache/
+server/public
 
 # Misc
 .DS_Store
