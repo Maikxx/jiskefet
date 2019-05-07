@@ -13,7 +13,6 @@ export class CreateTag extends React.Component<Props> {
                 <h3>ADD EXISTING TAG</h3>
                 <TagList category={'Subtype'} tags={[ 'Comments', 'Run' ]} />
                 <TagList category={'Runtype'} tags={[ 'Physics', 'Pedestal', 'Led', 'Gain', 'Pulser' ]} />
-                <TagList category={'Subtype'} tags={[ 'Comments', 'Run' ]} />
 
                 <h3>CREATE NEW TAG</h3>
                 <form action=''>

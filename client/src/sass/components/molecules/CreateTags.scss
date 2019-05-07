@@ -1,4 +1,6 @@
 .CreateTags {
+    margin-top: 3em;
+
     ul {
         display: flex;
         flex-direction: row;
@@ -23,6 +25,12 @@
         background-color: #E88626;
         border: none;
         font-weight: bold;
+    }
+
+    button:hover,
+    button:focus {
+        background-color: #E2ECF5;
+        transition: all .2s ease;
     }
 
     input {

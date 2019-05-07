@@ -2,6 +2,7 @@ import 'babel-polyfill'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import { Wysiwig } from './components/organisms/Wysiwyg'
+import { Attachment } from './components/organisms/Attachment'
 import { CreateTag } from './components/molecules/CreateTag'
 import socketIO from 'socket.io-client'
 
@@ -22,9 +23,10 @@ const App: React.SFC = () => (
             <Wysiwig />
 
             <CreateTag />
-            {/* Here comes add attachment organism */}
 
-            <button type='submit'>ADD NEW LOG</button>
+            <Attachment />
+
+            <button className='CreateLog' type='submit'>ADD NEW LOG</button>
         </div>
     </div>
 )
