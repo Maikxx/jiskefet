@@ -17,7 +17,7 @@ export class TagList extends React.Component<Props> {
                     {tags.map((tag, key) => {
                         return (
                             <li key={key}>
-                                {tag}
+                                <button type='button'>{tag}</button>
                             </li>
                         )
                     })}
