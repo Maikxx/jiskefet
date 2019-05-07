@@ -78,3 +78,9 @@ export function convOl(input: string) {
 
     return parent
 }
+
+export function convA(input: string) {
+    const rx1 = /(<a href=")(.*)(">)(.*)(<\/a>)/g
+    const get = input.replace(rx1, (...x) => `[${x[2]}](${x[2]})`)
+    return get
+}

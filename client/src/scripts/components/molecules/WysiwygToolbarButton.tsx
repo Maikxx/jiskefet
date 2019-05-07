@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-type WysiwygToolbarButtonType = 'italic' | 'bold' | 'strikeThrough' | 'formatBlock' | 'insertOrderedList' | 'insertUnorderedList'
+type WysiwygToolbarButtonType = 'italic' | 'bold' | 'strikeThrough' | 'formatBlock' | 'insertOrderedList' | 'insertUnorderedList' | 'link'
 type WysiwygToolbarButtonHeadingLevelType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 
 interface Props {
@@ -23,7 +23,7 @@ export class WysiwygToolbarButton extends React.Component<Props> {
         const { type } = this.props
         let fontAwesomeClassName = ''
 
-        if (type === 'bold' || type === 'italic' || type === 'strikeThrough') {
+        if (type === 'bold' || type === 'italic' || type === 'strikeThrough' || type === 'link') {
             fontAwesomeClassName = ` fa fa-${type.toLowerCase()}`
         } else if (type === 'insertOrderedList') {
             fontAwesomeClassName = ' fa fa-list-ol'
@@ -40,6 +40,24 @@ export class WysiwygToolbarButton extends React.Component<Props> {
             ? `<${headingLevel}>`
             : ''
 
-        document.execCommand(type, false, content)
+        if (type === 'link') {
+            this.onCreateLink()
+        } else {
+            document.execCommand(type, false, content)
+        }
+    }
+
+    private onCreateLink = () => {
+        if (window.getSelection) {
+            const text = String(window.getSelection())
+            const editor = document.getElementById('editor')
+
+            if (editor) {
+                const newValue = String(editor.innerHTML)
+                const get = newValue.replace(text, (...x) => `<a href="${x[0]}">${x[0]}</a>`)
+
+                editor.innerHTML = get
+            }
+        }
     }
 }
