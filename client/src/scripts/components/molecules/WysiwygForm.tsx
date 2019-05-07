@@ -15,7 +15,7 @@ export class WysiwygForm extends React.Component<Props> {
         return (
             <form className={`WysiwygForm ${className}`} onSubmit={this.onSubmit}>
                 <fieldset>
-                    <div className='center'>
+                    <div>
                         <h1>HTML Text to Markdown editor</h1>
                         <div ref={this.editorRef} contentEditable={true}>
                             <p>Change this text</p>
