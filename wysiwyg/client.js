@@ -20,6 +20,7 @@ form.addEventListener('submit', function (e) {
     newValue = convOl(newValue)
     newValue = convA(newValue)
     newValue = convImg(newValue)
+    newValue = convBq(newValue)
     output.innerHTML = newValue;
 })
 
@@ -131,6 +132,18 @@ function convImg(input) {
         return `![${x[2]}]`;
     });
     return get;
+}
+
+function convBq(input) {
+    var rx1 = /(<blockquote>)/g
+    var rx2 = /(<\/blockquote>)/g
+    let get = input.replace(rx1, (...x) => {
+        return `> `;
+    });
+    let rem = get.replace(rx2, (...x) => {
+        return ``;
+    });
+    return rem;
 }
 
 function linkChange() {
