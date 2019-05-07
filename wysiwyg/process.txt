@@ -17,7 +17,14 @@ rx = (<[/]*strike>)
 
 ## Lists
 document.execCommand("insertorderedlist");
+rx = (<[/]*ol>)
+rx2 = (<li>)
+rx3 = (</li>)
+
 document.execCommand("insertunorderedlist");
+rx = (<[/]*ul>)
+rx2 = (<li>)
+rx3 = (</li>)
 
 ## Links
 document.execCommand('createLink', true, url);
@@ -36,3 +43,4 @@ document.execCommand('inserthorizontalrule', false, null);
 
 ## Inline HTML
 document.execCommand('insertHTML', false, linkName)
+
