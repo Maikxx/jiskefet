@@ -24,14 +24,14 @@ export class WysiwygToolbarButton extends React.Component<Props> {
         let fontAwesomeClassName = ''
 
         if (type === 'bold' || type === 'italic' || type === 'strikeThrough') {
-            fontAwesomeClassName = `fa-${type.toLowerCase()}`
+            fontAwesomeClassName = ` fa fa-${type.toLowerCase()}`
         } else if (type === 'insertOrderedList') {
-            fontAwesomeClassName = 'fa-list-ol'
+            fontAwesomeClassName = ' fa fa-list-ol'
         } else if (type === 'insertUnorderedList') {
-            fontAwesomeClassName = 'fa-list-ul'
+            fontAwesomeClassName = ' fa fa-list-ul'
         }
 
-        return `WysiwygToolbar__item fa ${fontAwesomeClassName}`
+        return `WysiwygToolbar__item${fontAwesomeClassName}`
     }
 
     private onClick = () => {
