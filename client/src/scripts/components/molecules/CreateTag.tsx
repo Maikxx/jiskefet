@@ -2,6 +2,7 @@ import * as React from 'react'
 import { TagList } from '../atoms/TagList'
 import { getCurrentWindowOrigin } from '../../utils/url'
 import { Tag } from '../../types/Database'
+import socketIO from 'socket.io-client'
 
 interface Props { }
 
@@ -21,6 +22,7 @@ export class CreateTag extends React.Component<Props, State> {
     }
 
     private tagNameInputRef = React.createRef<HTMLInputElement>()
+    private createTagButtonRef = React.createRef<HTMLButtonElement>()
 
     public async componentDidMount() {
         const url = `${getCurrentWindowOrigin()}/get-tags`
@@ -36,6 +38,9 @@ export class CreateTag extends React.Component<Props, State> {
 
         if (success) {
             this.setState({ tags })
+
+            const io = socketIO()
+            io.on('connect', this.onSocketConnection(io))
         } else {
             throw new Error('Something went wrong fetching the tags!')
         }
@@ -43,9 +48,9 @@ export class CreateTag extends React.Component<Props, State> {
 
     public render() {
         const { tags } = this.state
-        const subTypeTags = tags.filter(tag => tag.typeId === TagTypeMap.subType).map(tag => tag.name)
-        const runTypeTags = tags.filter(tag => tag.typeId === TagTypeMap.runType).map(tag => tag.name)
-        const genericTypeTags = tags.filter(tag => tag.typeId === TagTypeMap.genericType).map(tag => tag.name)
+        const subTypeTags = tags.filter(tag => tag.typeId === TagTypeMap.subType)
+        const runTypeTags = tags.filter(tag => tag.typeId === TagTypeMap.runType)
+        const genericTypeTags = tags.filter(tag => tag.typeId === TagTypeMap.genericType)
 
         return (
             <div className={`CreateTags`}>
@@ -62,7 +67,7 @@ export class CreateTag extends React.Component<Props, State> {
                         Add new tag
                         <input type='text' ref={this.tagNameInputRef}/>
                     </label>
-                    <button type='submit'>Add tag</button>
+                    <button type='submit' ref={this.createTagButtonRef}>Add tag</button>
                 </form>
             </div>
         )
@@ -71,7 +76,12 @@ export class CreateTag extends React.Component<Props, State> {
     private onCreateNewTag = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
 
+        const createTagButton = this.createTagButtonRef.current
         const input = this.tagNameInputRef.current
+
+        if (createTagButton) {
+            createTagButton.blur()
+        }
 
         if (input) {
             const { value } = input
@@ -101,6 +111,22 @@ export class CreateTag extends React.Component<Props, State> {
             } else {
                 throw new Error('You have not given a valid name to the server!')
             }
+        }
+    }
+
+    private onSocketConnection = (io: SocketIOClient.Socket) => {
+        return () => {
+            console.info('Socket connection established')
+
+            io.on('tag-created', this.onTagCreated)
+        }
+    }
+
+    private onTagCreated = (newTag: Tag) => {
+        const { tags } = this.state
+
+        if (!tags.find(tag => tag.id === newTag.id)) {
+            this.setState({ tags: [ ...tags, newTag ] })
         }
     }
 }

@@ -11,7 +11,7 @@ import path from 'path'
     const app = express()
     const server = new http.Server(app)
 
-    setupSockets(server)
+    const sockets = setupSockets(server)
 
     app.use(helmet())
     app.use(express.static(path.join(__dirname, '../public')))
@@ -42,7 +42,8 @@ import path from 'path'
         const { tagName } = request.body
 
         try {
-            await addNewTagToDatabase(tagName)
+            const newlyAddedTag = await addNewTagToDatabase(tagName)
+            sockets.emit('tag-created', newlyAddedTag)
         } catch (error) {
             response.status(500).json({
                 success: false,

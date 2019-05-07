@@ -40,6 +40,8 @@ export async function addNewTagToDatabase(tagName: string) {
                 types,
                 tags,
             }))
+
+            return newTag
         } else {
             throw new Error('There is no tag found')
         }

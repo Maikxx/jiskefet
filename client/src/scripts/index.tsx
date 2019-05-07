@@ -4,13 +4,6 @@ import * as ReactDOM from 'react-dom'
 import { Wysiwig } from './components/organisms/Wysiwyg'
 import { Attachment } from './components/organisms/Attachment'
 import { CreateTag } from './components/molecules/CreateTag'
-import socketIO from 'socket.io-client'
-
-const io = socketIO()
-
-io.on('connect', () => {
-    console.info('Socket connection established')
-})
 
 const App: React.SFC = () => (
     <div>
