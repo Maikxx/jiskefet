@@ -3,7 +3,9 @@ console.log('working');
 const form = document.getElementById('form')
 const output = document.getElementById('markdownOutput')
 var createLink = document.getElementById('createLink');
-createLink.onclick = inputChange;
+createLink.onclick = linkChange;
+var createImage = document.getElementById('createImage');
+createImage.onclick = imageChange;
 
 
 form.addEventListener('submit', function (e) {
@@ -17,7 +19,8 @@ form.addEventListener('submit', function (e) {
     newValue = convUl(newValue)
     newValue = convOl(newValue)
     newValue = convA(newValue)
-    output.innerHTML = (newValue);
+    newValue = convImg(newValue)
+    output.innerHTML = newValue;
 })
 
 function convBold(input) {
@@ -117,14 +120,20 @@ function convOl(input) {
 function convA(input) {
     var rx1 = /(<a href=")(.*)(">)(.*)(<\/a>)/g
     let get = input.replace(rx1, (...x) => {
-        return `[${x[2]}](${x[2]})`;
+        return `[${x[2]}]`;
     });
     return get;
 }
 
+function convImg(input) {
+    var rx1 = /(<img src=")(.*)(" alt="">)/g
+    let get = input.replace(rx1, (...x) => {
+        return `![${x[2]}]`;
+    });
+    return get;
+}
 
-
-function inputChange() {
+function linkChange() {
     var text = "";
     if (window.getSelection) {
         text = String(window.getSelection());
@@ -135,11 +144,21 @@ function inputChange() {
             return `<a href="${x[0]}">${x[0]}</a>`
         });
 
-        inputValue.innerHTML = (get)
-
-    } else if (document.selection && document.selection.type != "Control") {
-        text = document.selection.createRange().text;
+        inputValue.innerHTML = get
     }
+}
 
-    return text;
+
+function imageChange() {
+    var text = "";
+    if (window.getSelection) {
+        text = String(window.getSelection());
+        const inputValue = document.getElementsByClassName('editor')[0];
+        var newValue = String(inputValue.innerHTML)
+        let get = text.replace(text, (...x) => {
+            console.log(x[0]);
+            return `<img src="${x[0]}" alt="">`
+        });
+        inputValue.innerHTML = get
+    }
 }
