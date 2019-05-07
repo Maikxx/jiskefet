@@ -5,13 +5,15 @@
     }
     
     ul li {
+        padding: 0;
+        list-style: none;
         display: block;
         color: #1C2C38;
         font-weight: bold;
         padding: .75em;
         border-radius: .35em;
         background-color: #E88626;
-        margin: 1em;
+        margin-right: 1em;
     }
 
     button {

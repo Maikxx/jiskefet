@@ -1,14 +1,10 @@
 import * as React from 'react'
 import { TagList } from '../atoms/TagList'
 
-interface Props {
-    categories: any[]
-}
+interface Props { }
 
 export class CreateTag extends React.Component<Props> {
     public render() {
-
-        const { categories } = this.props
 
         return (
             <div className={`CreateTags`}>
@@ -21,16 +17,6 @@ export class CreateTag extends React.Component<Props> {
 
                 <h3>CREATE NEW TAG</h3>
                 <form action=''>
-                    <label htmlFor=''>
-                        Choose an category to add your tag
-                        <select name='' id=''>
-                        {categories && categories.map(category => {
-                            return (
-                                <option key={category} value=''>{category}</option>
-                            )
-                        })}
-                        </select>
-                    </label>
                     <label htmlFor=''>
                         Add new tag
                         <input type='text'/>

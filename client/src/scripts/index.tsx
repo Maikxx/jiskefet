@@ -21,7 +21,7 @@ const App: React.SFC = () => (
 
             <Wysiwig />
 
-            <CreateTag categories={[ 'Subsystem', 'Runtype', 'HLT-mode', 'Class' ]}/>
+            <CreateTag />
             {/* Here comes add attachment organism */}
 
             <button type='submit'>ADD NEW LOG</button>
