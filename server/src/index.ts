@@ -4,6 +4,7 @@ import helmet from 'helmet'
 import http from 'http'
 import bodyParser from 'body-parser'
 import { setupSockets } from './www/sockets'
+import { getDataFromDatabase } from './www/database'
 
 (async () => {
     const app = express()
@@ -14,6 +15,8 @@ import { setupSockets } from './www/sockets'
     app.use(helmet())
     app.use(bodyParser.urlencoded({ extended: true }))
     app.use(bodyParser.json())
+
+    getDataFromDatabase()
 
     app.get('/', () => {
         console.log('Index get route')
