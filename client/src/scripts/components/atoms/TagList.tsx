@@ -47,6 +47,8 @@ export class TagList extends React.Component<Props> {
     private onAddTag = (tag: Tag) => {
         const { addTag } = this.props
 
+        console.log('Hoi Chelsea!')
+
         if (addTag) {
             addTag(tag)
         }
