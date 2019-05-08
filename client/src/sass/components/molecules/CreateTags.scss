@@ -28,7 +28,7 @@
 
     button:hover,
     button:focus {
-        background-color: #E2ECF5;
+        background-color: #FFAC5A;
         transition: all .2s ease;
     }
 
@@ -39,5 +39,46 @@
         padding: 1em;
         border-radius: .35em;
         margin-left: 1em;
+    }
+
+    .collapsible {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: .75em .75em;
+        font-size: 1.5em;
+        background-color: transparent;
+        color: #E2ECF5;
+    }
+
+    .collapsible:hover,
+    .collapsible:focus {
+        background-color: #324858;
+    }
+
+    .content {
+        display: block;
+        width: 100%;
+        padding: 0 .75em;
+    }
+
+}
+
+body.light {
+    .CreateTags {
+        .collapsible {
+            color: #1C2C38;
+        }
+
+        .collapsible:hover,
+        .collapsible:focus {
+            background-color: #FFAC5A;
+        }
+
+        .content {
+            display: block;
+            width: 100%;
+            padding: 0 .75em;
+        }
     }
 }

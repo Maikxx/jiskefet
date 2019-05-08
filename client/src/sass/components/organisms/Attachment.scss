@@ -1,21 +1,42 @@
 .Attachment {
     margin-top: 3em;
 
-    input {
+    .AttachmentInput {
+        display: block;
         opacity: 0;
         width: 100%;
-        min-height: 20vh;
-        max-height: 20vh;
+        height: 100%;
+        position: absolute;
+        top: -1em;
+        left: 0;
     }
 
     label  {
-        display: block;
+        position: relative;
+        display: flex;
         width: 100%;
         max-height: 20vh;
+        min-height: 20vh;
         border-color: #E2ECF5;
         padding: 4em;
         border: 1px solid;
         border-radius: .35em;
-        text-align: center;
+        justify-content: center;
+        align-items: center;
     }
+
+    svg {
+        width: 40px;
+        margin-right: 1em;
+    }
+
+    .cls-1{fill:  #5e7f96;}.cls-2{fill:  #97bfdd;}.cls-3{fill:  #e2ecf5;}
+}
+
+body.light {
+    label  {
+        border-color: #1C2C38;
+    }
+
+    .cls-1{fill:  #E88626;}.cls-2{fill:  #FFAC5A;}.cls-3{fill:  #1C2C38;}
 }

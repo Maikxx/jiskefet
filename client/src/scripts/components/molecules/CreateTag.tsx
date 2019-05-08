@@ -9,6 +9,7 @@ interface Props { }
 
 interface State {
     tags: Tag[]
+    open: boolean
 }
 
 const TagTypeMap = {
@@ -20,6 +21,7 @@ const TagTypeMap = {
 export class CreateTag extends React.Component<Props, State> {
     public state: State = {
         tags: [],
+        open: false,
     }
 
     private tagNameInputRef = React.createRef<HTMLInputElement>()
@@ -46,8 +48,11 @@ export class CreateTag extends React.Component<Props, State> {
 
         return (
             <div className={`CreateTags`}>
-                <h2>ADD TAGS</h2>
-
+                <button type='button' className='collapsible' onClick={() => this.togglePanel()} >
+                    ADD TAGS
+                </button>
+                {this.state.open ? (
+                <div className='content'>
                 <h3>ADD EXISTING TAG</h3>
                 <TagList category={'Subtype'} tags={subTypeTags} />
                 <TagList category={'Runtype'} tags={runTypeTags} />
@@ -61,6 +66,8 @@ export class CreateTag extends React.Component<Props, State> {
                     </label>
                     <button type='submit' ref={this.createTagButtonRef}>Create tag</button>
                 </form>
+                </div>
+                 ) : null}
             </div>
         )
     }
@@ -120,5 +127,9 @@ export class CreateTag extends React.Component<Props, State> {
         if (!tags.find(tag => tag.id === newTag.id)) {
             this.setState({ tags: [ ...tags, newTag ] })
         }
+    }
+
+    private togglePanel = () => {
+        this.setState({ open: !this.state.open })
     }
 }

@@ -1,8 +1,15 @@
 
 .WysiwygToolbar__item {
     background-color: #E88626;
+    border-top-left-radius: .35em;
+    border-top-right-radius: .35em;
     border: none;
     padding: 1em;
     text-align: center;
     font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,  'Helvetica Neue', sans-serif
+}
+
+.WysiwygToolbar__item:hover {
+    background-color: #FFAC5A;
+    transition: all .2s ease;
 }

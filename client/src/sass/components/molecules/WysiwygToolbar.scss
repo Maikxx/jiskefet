@@ -1,7 +1,8 @@
 .WysiwygToolbar {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20px, 40px));
+    display: flex;
+    flex-direction: row;
     background-color: #E88626;
     color: #1C2C38;
-    grid-gap: 1rem;
+    border-top-left-radius: .35em;
+    border-top-right-radius: .35em;
 }
