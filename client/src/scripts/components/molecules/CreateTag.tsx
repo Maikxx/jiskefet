@@ -5,7 +5,9 @@ import { Tag } from '../../types/Database'
 import socketIO from 'socket.io-client'
 import { getTags } from '../../utils/fetchers'
 
-interface Props { }
+interface Props {
+    addTag: (tag: Tag) => void
+}
 
 interface State {
     tags: Tag[]
@@ -41,7 +43,8 @@ export class CreateTag extends React.Component<Props, State> {
     }
 
     public render() {
-        const { tags } = this.state
+        const { addTag } = this.props
+        const { tags, open } = this.state
         const subTypeTags = tags.filter(tag => tag.typeId === TagTypeMap.subType)
         const runTypeTags = tags.filter(tag => tag.typeId === TagTypeMap.runType)
         const genericTypeTags = tags.filter(tag => tag.typeId === TagTypeMap.genericType)
@@ -51,22 +54,34 @@ export class CreateTag extends React.Component<Props, State> {
                 <button type='button' className='collapsible' onClick={() => this.togglePanel()} >
                     ADD TAGS
                 </button>
-                {this.state.open ? (
-                <div className='content'>
-                <h3>ADD EXISTING TAG</h3>
-                <TagList category={'Subtype'} tags={subTypeTags} />
-                <TagList category={'Runtype'} tags={runTypeTags} />
-                <TagList category={'Generic'} tags={genericTypeTags} />
+                {open ? (
+                    <div className='content'>
+                        <h3>ADD EXISTING TAG</h3>
+                        <TagList
+                            category={'Subtype'}
+                            tags={subTypeTags}
+                            addTag={addTag}
+                        />
+                        <TagList
+                            category={'Runtype'}
+                            tags={runTypeTags}
+                            addTag={addTag}
+                        />
+                        <TagList
+                            category={'Generic'}
+                            tags={genericTypeTags}
+                            addTag={addTag}
+                        />
 
-                <h3>CREATE NEW TAG</h3>
-                <form onSubmit={this.onCreateNewTag}>
-                    <label>
-                        Name
-                        <input type='text' ref={this.tagNameInputRef}/>
-                    </label>
-                    <button type='submit' ref={this.createTagButtonRef}>Create tag</button>
-                </form>
-                </div>
+                        <h3>CREATE NEW TAG</h3>
+                        <form onSubmit={this.onCreateNewTag}>
+                            <label>
+                                Name
+                                <input type='text' ref={this.tagNameInputRef}/>
+                            </label>
+                            <button type='submit' ref={this.createTagButtonRef}>Create tag</button>
+                        </form>
+                    </div>
                  ) : null}
             </div>
         )
