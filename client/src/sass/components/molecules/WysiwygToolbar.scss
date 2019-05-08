@@ -1,6 +1,7 @@
 .WysiwygToolbar {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     background-color: #E88626;
     color: #1C2C38;
     border-top-left-radius: .35em;

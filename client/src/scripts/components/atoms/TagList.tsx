@@ -12,7 +12,7 @@ export class TagList extends React.Component<Props> {
         const { category, tags } = this.props
 
         return (
-            <div>
+            <div className='TagList'>
                 {category && (
                     <h4>
                         {category}
