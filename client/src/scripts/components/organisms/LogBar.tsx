@@ -12,14 +12,14 @@ export class LogBar extends React.Component<Props> {
         const { addedTags } = this.props
 
         return (
-                <Row>
-                    <div className='LogBar'>
-                        <label>
-                            <input type='text' placeholder='Add a title for this log'/>
-                        </label>
-                    </div>
-                    <TagList tags={addedTags} />
-                </Row>
+            <Row>
+                <div className='LogBar'>
+                    <label>
+                        <input type='text' placeholder='Add a title for this log'/>
+                    </label>
+                </div>
+                <TagList tags={addedTags} />
+            </Row>
         )
     }
 }
