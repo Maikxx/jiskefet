@@ -5,6 +5,8 @@ import { Tag } from '../../types/Database'
 import socketIO from 'socket.io-client'
 import { getTags } from '../../utils/fetchers'
 import { Button } from '../atoms/Button'
+import { LanguageContext } from '../../utils/LanguageProvider'
+import { Language } from '../../types/Language'
 
 interface Props {
     addTag: (tag: Tag) => void
@@ -51,45 +53,49 @@ export class CreateTag extends React.Component<Props, State> {
         const genericTypeTags = tags.filter(tag => tag.typeId === TagTypeMap.genericType)
 
         return (
-            <div className={`CreateTags`}>
-                <Button
-                    type='button'
-                    className='collapsible Capitalize'
-                    onClick={() => this.togglePanel()}
-                >
-                    <svg className='plus' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72.59 72.59'><defs></defs><g id='Laag_2' data-name='Laag 2'><g id='Laag_1-2' data-name='Laag 1'><circle className='row-1' cx='36.29' cy='36.29' r='35.29'/><path className='row-2' d='M36.49,19.43q-.09,16.86-.2,33.73'/><path className='row-2' d='M19.43,36.2l33.73.19'/></g></g></svg>
-                    Add tags
-                </Button>
-                {open ? (
-                    <div className='content'>
-                        <h3 className={`Capitalize`}>Add existing tag</h3>
-                        <TagList
-                            category={'Subtype'}
-                            tags={subTypeTags}
-                            addTag={addTag}
-                        />
-                        <TagList
-                            category={'Runtype'}
-                            tags={runTypeTags}
-                            addTag={addTag}
-                        />
-                        <TagList
-                            category={'Generic'}
-                            tags={genericTypeTags}
-                            addTag={addTag}
-                        />
+            <LanguageContext.Consumer>
+                {(language: Language) => (
+                    <div className={`CreateTags`}>
+                        <Button
+                            type='button'
+                            className='collapsible Capitalize'
+                            onClick={() => this.togglePanel()}
+                        >
+                            <svg className='plus' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72.59 72.59'><defs></defs><g id='Laag_2' data-name='Laag 2'><g id='Laag_1-2' data-name='Laag 1'><circle className='row-1' cx='36.29' cy='36.29' r='35.29'/><path className='row-2' d='M36.49,19.43q-.09,16.86-.2,33.73'/><path className='row-2' d='M19.43,36.2l33.73.19'/></g></g></svg>
+                            {language.App.Generic.addTags}
+                        </Button>
+                        {open ? (
+                            <div className='content'>
+                                <h3 className={`Capitalize`}>{language.App.Generic.addExistingTags}</h3>
+                                <TagList
+                                    category={'Subtype'}
+                                    tags={subTypeTags}
+                                    addTag={addTag}
+                                />
+                                <TagList
+                                    category={'Runtype'}
+                                    tags={runTypeTags}
+                                    addTag={addTag}
+                                />
+                                <TagList
+                                    category={'Generic'}
+                                    tags={genericTypeTags}
+                                    addTag={addTag}
+                                />
 
-                        <h3 className={`Capitalize`}>Create new tag</h3>
-                        <form onSubmit={this.onCreateNewTag}>
-                            <label>
-                                Name
-                                <input type='text' ref={this.tagNameInputRef}/>
-                            </label>
-                            <button type='submit' ref={this.createTagButtonRef}>Create tag</button>
-                        </form>
+                                <h3 className={`Capitalize`}>{language.App.Generic.createNewTag}</h3>
+                                <form onSubmit={this.onCreateNewTag}>
+                                    <label>
+                                        {language.App.Generic.name}
+                                        <input type='text' ref={this.tagNameInputRef}/>
+                                    </label>
+                                    <button type='submit' ref={this.createTagButtonRef}>{language.App.Generic.createTag}</button>
+                                </form>
+                            </div>
+                        ) : null}
                     </div>
-                 ) : null}
-            </div>
+                )}
+            </LanguageContext.Consumer>
         )
     }
 

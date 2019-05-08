@@ -1,6 +1,8 @@
 import * as React from 'react'
 import { convBold, convItalic, convStrikethrough, convHeading, convUl, convOl, convA, convImg, convBq } from '../../utils/converters'
 import { Button } from '../atoms/Button'
+import { LanguageContext } from '../../utils/LanguageProvider'
+import { Language } from '../../types/Language'
 
 interface Props {
     className?: string
@@ -14,16 +16,20 @@ export class WysiwygForm extends React.Component<Props> {
         const { className } = this.props
 
         return (
-            <form className={`WysiwygForm ${className}`} onSubmit={this.onSubmit}>
-                <fieldset>
-                    <div>
-                        <div ref={this.editorRef} contentEditable={true} id={`editor`}>
-                            <p>Change this text</p>
-                        </div>
-                    </div>
-                    <Button type='submit'>Convert to Markdown</Button>
-                </fieldset>
-            </form>
+            <LanguageContext.Consumer>
+                {(language: Language) => (
+                    <form className={`WysiwygForm ${className}`} onSubmit={this.onSubmit}>
+                        <fieldset>
+                            <div>
+                                <div ref={this.editorRef} contentEditable={true} id={`editor`}>
+                                    <p>{language.App.Wysiwyg.editorText}</p>
+                                </div>
+                            </div>
+                            <Button type='submit'>{language.App.Wysiwyg.convertToMarkdown}</Button>
+                        </fieldset>
+                    </form>
+                )}
+            </LanguageContext.Consumer>
         )
     }
 

@@ -2,6 +2,8 @@ import * as React from 'react'
 import { Row } from '../atoms/Row'
 import { TagList } from '../atoms/TagList'
 import { Tag } from '../../types/Database'
+import { LanguageContext } from '../../utils/LanguageProvider'
+import { Language } from '../../types/Language'
 
 interface Props {
     addedTags: Tag[]
@@ -12,14 +14,18 @@ export class LogBar extends React.Component<Props> {
         const { addedTags } = this.props
 
         return (
-            <Row>
-                <div className='LogBar'>
-                    <label>
-                        <input type='text' placeholder='Add a title for this log'/>
-                    </label>
-                </div>
-                <TagList tags={addedTags} />
-            </Row>
+            <LanguageContext.Consumer>
+                {(language: Language) => (
+                    <Row>
+                        <div className='LogBar'>
+                            <label>
+                                <input type='text' placeholder={language.App.LogBar.add_title_for_log}/>
+                            </label>
+                        </div>
+                        <TagList tags={addedTags} />
+                    </Row>
+                )}
+            </LanguageContext.Consumer>
         )
     }
 }

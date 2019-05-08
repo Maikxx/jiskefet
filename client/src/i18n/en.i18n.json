@@ -1,0 +1,25 @@
+{
+    "App": {
+        "Generic": {
+            "createNewLog": "Create new log",
+            "darkMode": "Dark mode",
+            "addNewLog": "Add new log",
+            "addTags": "Add tags",
+            "addExistingTags": "Add existing tags",
+            "createNewTag": "Create new tag",
+            "name": "Name",
+            "createTag": "Create tag"
+        },
+        "LogBar": {
+            "add_title_for_log": "Add a title for this log"
+        },
+        "Wysiwyg": {
+            "editorText": "Change this text.",
+            "convertToMarkdown": "Convert to markdown"
+        },
+        "Attachment": {
+            "addAttachment": "Add attachment",
+            "addYourFiles": "Add your files"
+        }
+    }
+}
