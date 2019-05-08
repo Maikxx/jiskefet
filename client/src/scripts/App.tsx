@@ -7,17 +7,23 @@ import { CreateTag } from './components/molecules/CreateTag'
 import { Attachment } from './components/organisms/Attachment'
 import { Button } from './components/atoms/Button'
 import { Language } from './types/Language'
-import { LanguageContext } from './components/LanguageProvider'
+import { LanguageContext, LANGUAGE_OPTIONS } from './components/LanguageProvider'
 import { Selector } from './components/atoms/Selector'
 
+import i18n_de from '../i18n/de.i18n.json'
 import i18n_en from '../i18n/en.i18n.json'
 import i18n_es from '../i18n/es.i18n.json'
+import i18n_hi from '../i18n/hi.i18n.json'
 import i18n_ru from '../i18n/ru.i18n.json'
+import i18n_zh from '../i18n/zh.i18n.json'
 
 const languageMap = {
+    de: i18n_de,
     en: i18n_en,
     es: i18n_es,
+    hi: i18n_hi,
     ru: i18n_ru,
+    zh: i18n_zh,
 }
 
 interface State {
@@ -31,23 +37,6 @@ export class App extends React.Component<{}, State> {
         language: languageMap.en,
     }
 
-    private languageOptions = [
-        { name: 'Arabic', code: 'AR', disabled: true },
-        { name: 'Chinese Mandarin', code: 'ZH', disabled: true },
-        { name: 'English', code: 'EN', disabled: false },
-        { name: 'French', code: 'FR', disabled: true },
-        { name: 'German', code: 'DE', disabled: true },
-        { name: 'Hindi', code: 'HI', disabled: true },
-        { name: 'Italian', code: 'IT', disabled: true },
-        { name: 'Polish', code: 'PL', disabled: true },
-        { name: 'Portuguese', code: 'PT', disabled: true },
-        { name: 'Russian', code: 'RU', disabled: false },
-        { name: 'Spanish', code: 'ES', disabled: false },
-        { name: 'Turkish', code: 'TR', disabled: true },
-        { name: 'Ukrainian', code: 'UK', disabled: true },
-        { name: 'Urdu', code: 'UR', disabled: true },
-    ]
-
     public render() {
         const { addedTags, language } = this.state
 
@@ -59,7 +48,7 @@ export class App extends React.Component<{}, State> {
                     </h1>
                     <Selector
                         title={language.App.Generic.chooseALanguage}
-                        options={this.languageOptions}
+                        options={LANGUAGE_OPTIONS}
                         onChange={this.onChangeLanguage}
                     />
                     <label id='switch' className={`Capitalize`}>
