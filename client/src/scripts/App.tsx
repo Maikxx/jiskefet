@@ -25,7 +25,6 @@ export class App extends React.Component<{}, State> {
 
     public render() {
         const { addedTags, language } = this.state
-        console.log(language)
 
         return (
             <LanguageContext.Provider value={language}>
