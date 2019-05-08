@@ -17,6 +17,7 @@ export class Attachment extends React.Component<Props> {
         return (
             <div className={`Attachment`}>
                 <Button type='button' className='collapsible Capitalize' onClick={() => this.togglePanel()} >
+                    <svg className='plus' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72.59 72.59'><defs></defs><g id='Laag_2' data-name='Laag 2'><g id='Laag_1-2' data-name='Laag 1'><circle className='row-1' cx='36.29' cy='36.29' r='35.29'/><path className='row-2' d='M36.49,19.43q-.09,16.86-.2,33.73'/><path className='row-2' d='M19.43,36.2l33.73.19'/></g></g></svg>
                     Add attachment
                 </Button>
                 {this.state.open ? (

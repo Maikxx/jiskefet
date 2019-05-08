@@ -48,7 +48,7 @@
     .cls-1{fill:  #5e7f96;}.cls-2{fill:  #97bfdd;}.cls-3{fill:  #e2ecf5;}
 
     .collapsible {
-        display: block;
+        display: flex;
         width: 100%;
         text-align: left;
         padding: .75em .75em;
@@ -66,6 +66,12 @@
     .content {
         display: block;
         width: 100%;
+    }
+
+    .plus {
+        width: 20px;
+
+        .row-1,.row-2{fill:  none;stroke:#e2ecf6;stroke-miterlimit:10;stroke-width:2px;}.row-2{stroke-linecap:round;}
     }
 }
 
@@ -91,5 +97,9 @@ body.light {
         }
     
         .cls-1{fill:  #E88626;}.cls-2{fill:  #FFAC5A;}.cls-3{fill:  #1C2C38;}
+
+        .plus {
+            .row-1,.row-2{fill:  none;stroke:#1C2C38;stroke-miterlimit:10;stroke-width:2px;}.row-2{stroke-linecap:round;}
+        }
     }
 }

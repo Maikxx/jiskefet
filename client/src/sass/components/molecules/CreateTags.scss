@@ -26,7 +26,7 @@
     }
 
     .collapsible {
-        display: block;
+        display: flex;
         width: 100%;
         text-align: left;
         padding: .75em .75em;
@@ -46,6 +46,13 @@
         padding: 0 .75em;
     }
 
+    .plus {
+        width: 20px;
+        margin-right: 1em;
+
+        .row-1,.row-2{fill:  none;stroke:#e2ecf6;stroke-miterlimit:10;stroke-width:2px;}.row-2{stroke-linecap:round;}
+    }
+
 }
 
 body.light {
@@ -63,6 +70,10 @@ body.light {
             display: block;
             width: 100%;
             padding: 0 .75em;
+        }
+
+        .plus {
+            .row-1,.row-2{fill:  none;stroke:#1C2C38;stroke-miterlimit:10;stroke-width:2px;}.row-2{stroke-linecap:round;}
         }
     }
 }
