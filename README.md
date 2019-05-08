@@ -1,5 +1,17 @@
 # Jiskefet
 
+This project aims to create a working demo for an enhancement of the ALICE logging system, created in collaboration between the UASA and CERN.
+
+This demo is a collaboration between [Chelsea Doeleman](https://github.com/ChelseaDoeleman), [Robin Stut](https://github.com/RobinStut) and [Maikel van Veen](https://github.com/Maikxx).
+
+## Table of contents
+
+* [Installation](#Installation)
+    * [Folder structure](#Folder-structure)
+    * [Extra documentation](#Extra-documentation)
+* [Process](#Process)
+* [Issues](#Issues)
+
 ## Installation
 
 * Make sure to install [yarn](https://yarnpkg.com/en/) or [npm](https://www.npmjs.com).
@@ -30,25 +42,26 @@ Both the clients `src/sass` and `src/scripts` folders should have the following 
     * molecules
     * organisms
 
-## Docs
+### Extra documentation
 
 * You can find the atomic design principles [here](./docs/ATOMIC.md).
 * You can view the project overview [here](./docs/PROJECT_OVERVIEW.md).
+
+## Process
+
+* Autospelling check for tag names
+* Drag & drop attachment
+* Enable typing markdown directly
+* Editing tags
+* Tag restriction - only some people can create
+* Restrict tags by name duplicated
 
 ## Issues
 
 * Horizontal line styling
 * Blockquote styling
-
-## Feedback from wednesday
-
-* Autospelling check
-* Drop in file
-* Markdown typen
-* Editing tags
-* Tag restriction - only some people can create
-* Restrict tags by name duplicated
+* Refactor `collapsible` into it's own component
 
 ## License
 
-This repository is licensed as [MIT](LICENSE) by [Maikel van Veen](https://github.com/maikxx).
+This repository is licensed as [MIT](LICENSE) by [Chelsea Doeleman](https://github.com/ChelseaDoeleman), [Robin Stut](https://github.com/RobinStut) and [Maikel van Veen](https://github.com/maikxx).
