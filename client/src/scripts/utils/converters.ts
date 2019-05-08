@@ -80,13 +80,14 @@ export function convOl(input: string) {
 }
 
 export function convA(input: string) {
-    const rx1 = /(<a href=")(.*)(">)(.*)(<\/a>)/g
-    const get = input.replace(rx1, (...x) => `[${x[2]}](${x[2]})`)
+    const rx1 = /(<a href=")([^"]*)(">)([\w\d\s\:\/\.\-\?\=\&\;]*)(<\/a>)/g
+    const get = input.replace(rx1, (...x) => `[${x[2]}]`)
+
     return get
 }
 
 export function convImg(input: string) {
-    const rx1 = /(<img src=")(.*)(" alt="">)/g
+    const rx1 = /(<img src=")([^"]*)(">)/g
     const get = input.replace(rx1, (...x) => `![${x[2]}]`)
 
     return get

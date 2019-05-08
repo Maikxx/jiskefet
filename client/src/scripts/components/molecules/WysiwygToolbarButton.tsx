@@ -52,7 +52,7 @@ export class WysiwygToolbarButton extends React.Component<Props> {
 
     private onClick = () => {
         const { type, headingLevel, isForQuote } = this.props
-        let content = ''
+        let content: string = ''
 
         if (type === 'formatBlock') {
             if (headingLevel) {
@@ -60,41 +60,18 @@ export class WysiwygToolbarButton extends React.Component<Props> {
             } else if (isForQuote) {
                 content = `<blockquote>`
             }
+        } else if (type === 'link' || type === 'image') {
+            content = String(window.getSelection())
         }
+
+        let command: string = type
 
         if (type === 'link') {
-            this.onCreateLink()
+            command = 'createLink'
         } else if (type === 'image') {
-            this.onCreateImage()
-        } else {
-            document.execCommand(type, false, content)
+            command = 'insertImage'
         }
-    }
 
-    private onCreateImage = () => {
-        if (window.getSelection) {
-            const text = String(window.getSelection())
-            const editor = document.getElementById('editor')
-
-            if (editor) {
-                const get = String(editor.innerHTML).replace(text, (...x) => `<img src="${x[0]}" alt="">`)
-
-                editor.innerHTML = get
-            }
-        }
-    }
-
-    private onCreateLink = () => {
-        if (window.getSelection) {
-            const text = String(window.getSelection())
-            const editor = document.getElementById('editor')
-
-            if (editor) {
-                const newValue = String(editor.innerHTML)
-                const get = newValue.replace(text, (...x) => `<a href="${x[0]}">${x[0]}</a>`)
-
-                editor.innerHTML = get
-            }
-        }
+        document.execCommand(command, false, content)
     }
 }
