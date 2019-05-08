@@ -56,10 +56,10 @@ export class CreateTag extends React.Component<Props, State> {
                 <h3>CREATE NEW TAG</h3>
                 <form onSubmit={this.onCreateNewTag}>
                     <label>
-                        Add new tag
+                        Name
                         <input type='text' ref={this.tagNameInputRef}/>
                     </label>
-                    <button type='submit' ref={this.createTagButtonRef}>Add tag</button>
+                    <button type='submit' ref={this.createTagButtonRef}>Create tag</button>
                 </form>
             </div>
         )
