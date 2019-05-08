@@ -17,11 +17,11 @@ export class Wysiwig extends React.Component<Props, State> {
         const { currentValue } = this.state
 
         return (
-            <div className={`Wysiwyg`}>
+            <React.Fragment>
                 <WysiwygToolbar />
                 <WysiwygForm onSubmit={this.onSubmitForm}/>
                 <section dangerouslySetInnerHTML={{ __html: currentValue }}></section>
-            </div>
+            </React.Fragment>
         )
     }
 
