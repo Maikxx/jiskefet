@@ -20,7 +20,7 @@ export class Wysiwig extends React.Component<Props, State> {
             <React.Fragment>
                 <WysiwygToolbar />
                 <WysiwygForm onSubmit={this.onSubmitForm}/>
-                <section dangerouslySetInnerHTML={{ __html: currentValue }}></section>
+                <section dangerouslySetInnerHTML={{ __html: currentValue }}/>
             </React.Fragment>
         )
     }
