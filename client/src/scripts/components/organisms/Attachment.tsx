@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Button } from '../atoms/Button'
-import { LanguageContext } from '../../utils/LanguageProvider'
+import { LanguageContext } from '../LanguageProvider'
 import { Language } from '../../types/Language'
 
 interface Props { }

@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Row } from '../atoms/Row'
 import { TagList } from '../atoms/TagList'
 import { Tag } from '../../types/Database'
-import { LanguageContext } from '../../utils/LanguageProvider'
+import { LanguageContext } from '../LanguageProvider'
 import { Language } from '../../types/Language'
 
 interface Props {

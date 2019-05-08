@@ -5,7 +5,7 @@ import { Tag } from '../../types/Database'
 import socketIO from 'socket.io-client'
 import { getTags } from '../../utils/fetchers'
 import { Button } from '../atoms/Button'
-import { LanguageContext } from '../../utils/LanguageProvider'
+import { LanguageContext } from '../LanguageProvider'
 import { Language } from '../../types/Language'
 
 interface Props {

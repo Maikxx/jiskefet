@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { convBold, convItalic, convStrikethrough, convHeading, convUl, convOl, convA, convImg, convBq } from '../../utils/converters'
 import { Button } from '../atoms/Button'
-import { LanguageContext } from '../../utils/LanguageProvider'
+import { LanguageContext } from '../LanguageProvider'
 import { Language } from '../../types/Language'
 
 interface Props {

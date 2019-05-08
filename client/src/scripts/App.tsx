@@ -7,7 +7,7 @@ import { CreateTag } from './components/molecules/CreateTag'
 import { Attachment } from './components/organisms/Attachment'
 import { Button } from './components/atoms/Button'
 import { Language } from './types/Language'
-import { LanguageContext } from './utils/LanguageProvider'
+import { LanguageContext } from './components/LanguageProvider'
 import { Selector } from './components/atoms/Selector'
 
 import i18n_en from '../i18n/en.i18n.json'
