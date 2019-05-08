@@ -1,25 +1,25 @@
-export function convBold(input: string) {
+export function convertBold(input: string) {
     const rx = /(<[/]*b>)/g
     const get = input.replace(rx, '**')
 
     return get
 }
 
-export function convItalic(input: string) {
+export function convertItalic(input: string) {
     const rx = /(<[/]*i>)/g
     const get = input.replace(rx, '*')
 
     return get
 }
 
-export function convStrikethrough(input: string) {
+export function convertStrikethrough(input: string) {
     const rx = /(<[/]*strike>)/g
     const get = input.replace(rx, '~~')
 
     return get
 }
 
-export function convHeading(input: string) {
+export function convertHeading(input: string) {
     const rx1 = /(<h)([1-6])(>)/g
     const rx2 = /(<\/h[1-6]>)/g
 
@@ -39,7 +39,7 @@ export function convHeading(input: string) {
     return rem
 }
 
-export function convUl(input: string) {
+export function convertUl(input: string) {
     const rx1 = /(<ul>)(.*)(<\/ul>)/g
     const rx2 = /(<[\/]*ul>)/g
     const rx3 = /(<li>)/g
@@ -56,7 +56,7 @@ export function convUl(input: string) {
     return parent
 }
 
-export function convOl(input: string) {
+export function convertOl(input: string) {
     const rx1 = /(<ol>)(.*)(<\/ol>)/g
     const rx2 = /(<[\/]*ol>)/g
     const rx3 = /(<li>)/g
@@ -79,21 +79,21 @@ export function convOl(input: string) {
     return parent
 }
 
-export function convA(input: string) {
+export function convertLink(input: string) {
     const rx1 = /(<a href=")([^"]*)(">)([\w\d\s\:\/\.\-\?\=\&\;]*)(<\/a>)/g
     const get = input.replace(rx1, (...x) => `[${x[2]}]`)
 
     return get
 }
 
-export function convImg(input: string) {
+export function convertImg(input: string) {
     const rx1 = /(<img src=")([^"]*)(">)/g
     const get = input.replace(rx1, (...x) => `![${x[2]}]`)
 
     return get
 }
 
-export function convBq(input: string) {
+export function convertBlockQuote(input: string) {
     const rx1 = /(<blockquote>)/g
     const rx2 = /(<\/blockquote>)/g
     const get = input.replace(rx1, '> ')

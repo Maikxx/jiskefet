@@ -1,5 +1,15 @@
 import * as React from 'react'
-import { convBold, convItalic, convStrikethrough, convHeading, convUl, convOl, convA, convImg, convBq } from '../../utils/converters'
+import {
+    convertBold,
+    convertItalic,
+    convertStrikethrough,
+    convertHeading,
+    convertUl,
+    convertOl,
+    convertLink,
+    convertImg,
+    convertBlockQuote
+} from '../../utils/converters'
 import { Button } from '../atoms/Button'
 import { LanguageContext } from '../LanguageProvider'
 import { Language } from '../../types/Language'
@@ -20,10 +30,8 @@ export class WysiwygForm extends React.Component<Props> {
                 {(language: Language) => (
                     <form className={`WysiwygForm ${className}`} onSubmit={this.onSubmit}>
                         <fieldset>
-                            <div>
-                                <div ref={this.editorRef} contentEditable={true} id={`editor`}>
-                                    <p>{language.App.Wysiwyg.editorText}</p>
-                                </div>
+                            <div ref={this.editorRef} contentEditable={true} id={`editor`}>
+                                <p>{language.App.Wysiwyg.editorText}</p>
                             </div>
                             <Button type='submit'>{language.App.Wysiwyg.convertToMarkdown}</Button>
                         </fieldset>
@@ -41,15 +49,15 @@ export class WysiwygForm extends React.Component<Props> {
         if (this.editorRef.current) {
             const editorContainer = this.editorRef.current as HTMLDivElement
             let newValue = String(editorContainer.innerHTML)
-            newValue = convBold(newValue)
-            newValue = convItalic(newValue)
-            newValue = convStrikethrough(newValue)
-            newValue = convHeading(newValue)
-            newValue = convUl(newValue)
-            newValue = convOl(newValue)
-            newValue = convA(newValue)
-            newValue = convImg(newValue)
-            newValue = convBq(newValue)
+            newValue = convertBold(newValue)
+            newValue = convertItalic(newValue)
+            newValue = convertStrikethrough(newValue)
+            newValue = convertHeading(newValue)
+            newValue = convertUl(newValue)
+            newValue = convertOl(newValue)
+            newValue = convertLink(newValue)
+            newValue = convertImg(newValue)
+            newValue = convertBlockQuote(newValue)
 
             onSubmit(newValue)
         }
