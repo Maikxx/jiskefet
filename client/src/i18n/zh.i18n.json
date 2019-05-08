@@ -1,0 +1,29 @@
+{
+    "App": {
+        "Generic": {
+            "chooseALanguage": "选择一种语言",
+            "createNewLog": "创建新日志",
+            "darkMode": "黑暗模式",
+            "addNewLog": "添加新日志",
+            "addTags": "添加标签",
+            "addExistingTags": "添加现有标签",
+            "createNewTag": "创建新标签",
+            "name": "姓名",
+            "createTag": "创建标签",
+            "subType": "子类型",
+            "runType": "运行类型",
+            "generic": "通用"
+        },
+        "LogBar": {
+            "addTitleForLog": "添加此日志的标题"
+        },
+        "Wysiwyg": {
+            "editorText": "更改此文本。",
+            "convertToMarkdown": "转换为markdown"
+        },
+        "Attachment": {
+            "addAttachment": "添加附件",
+            "addYourFiles": "添加文件"
+        }
+    }
+}

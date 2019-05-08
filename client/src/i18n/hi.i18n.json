@@ -1,0 +1,29 @@
+{
+    "App": {
+        "Generic": {
+            "chooseALanguage": "एक भाषा चुनें",
+            "createNewLog": "नया लॉग बनाएँ",
+            "darkMode": "डार्क मोड",
+            "addNewLog": "नया लॉग जोड़ें",
+            "addTags": "टैग जोड़ें",
+            "addExistingTags": "मौजूदा टैग्स जोड़ें",
+            "createNewTag": "नया टैग बनाएँ",
+            "name": "नाम",
+            "createTag": "टैग बनाएँ",
+            "subType": "उप-प्रकार",
+            "runType": "चलाएँ क़िस्म",
+            "generic": "जेनेरिक"
+        },
+        "LogBar": {
+            "addTitleForLog": "इस लॉग के लिए शीर्षक जोड़ें"
+        },
+        "Wysiwyg": {
+            "editorText": "इस पाठ को बदलें.",
+            "convertToMarkdown": "कन्वर्ट करने के लिए markdown"
+        },
+        "Attachment": {
+            "addAttachment": "संलग्नक जोड़ें",
+            "addYourFiles": "अपनी फ़ाइलें जोड़ें"
+        }
+    }
+}

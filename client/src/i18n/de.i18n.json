@@ -1,0 +1,29 @@
+{
+    "App": {
+        "Generic": {
+            "chooseALanguage": "Wählen Sie eine Sprache",
+            "createNewLog": "Neues Protokoll erstellen",
+            "darkMode": "Dunkler Modus",
+            "addNewLog": "Neues Protokoll hinzufügen",
+            "addTags": "Tags hinzufügen",
+            "addExistingTags": "Vorhandene tags hinzufügen",
+            "createNewTag": "Neuen tag erstellen",
+            "name": "Name",
+            "createTag": "Erstellen von Tags",
+            "subType": "Untertyp",
+            "runType": "Typ ausführen",
+            "generic": "Generisch"
+        },
+        "LogBar": {
+            "addTitleForLog": "Fügen Sie einen Titel für dieses Protokoll"
+        },
+        "Wysiwyg": {
+            "editorText": "Ändern Sie diesen text.",
+            "convertToMarkdown": "Markdown zu konvertieren"
+        },
+        "Attachment": {
+            "addAttachment": "Anhang hinzufügen",
+            "addYourFiles": "Fügen Sie Ihre Dateien"
+        }
+    }
+}
