@@ -40,6 +40,15 @@ Both the clients `src/sass` and `src/scripts` folders should have the following 
 * Horizontal line styling
 * Blockquote styling
 
+## Feedback from wednesday
+
+* Autospelling check
+* Drop in file
+* Markdown typen
+* Editing tags
+* Tag restriction - only some people can create
+* Restrict tags by name duplicated
+
 ## License
 
 This repository is licensed as [MIT](LICENSE) by [Maikel van Veen](https://github.com/maikxx).
