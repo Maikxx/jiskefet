@@ -3,6 +3,7 @@ import { TagList } from '../atoms/TagList'
 import { getCurrentWindowOrigin } from '../../utils/url'
 import { Tag } from '../../types/Database'
 import socketIO from 'socket.io-client'
+import { getTags } from '../../utils/fetchers'
 
 interface Props { }
 
@@ -25,16 +26,7 @@ export class CreateTag extends React.Component<Props, State> {
     private createTagButtonRef = React.createRef<HTMLButtonElement>()
 
     public async componentDidMount() {
-        const url = `${getCurrentWindowOrigin()}/get-tags`
-        const fetchVariables = {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        }
-
-        const response = await fetch(url, fetchVariables)
-        const { data: tags, success } = await response.json()
+        const { data: tags, success } = await getTags()
 
         if (success) {
             this.setState({ tags })
