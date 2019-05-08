@@ -7,10 +7,16 @@ import { CreateTag } from './components/molecules/CreateTag'
 import { Attachment } from './components/organisms/Attachment'
 import { Button } from './components/atoms/Button'
 import { Language } from './types/Language'
-
-import i18n_en from '../i18n/en.i18n.json'
 import { LanguageContext } from './utils/LanguageProvider'
 import { Selector } from './components/atoms/Selector'
+
+import i18n_en from '../i18n/en.i18n.json'
+import i18n_es from '../i18n/es.i18n.json'
+
+const languageMap = {
+    en: i18n_en,
+    es: i18n_es,
+}
 
 interface State {
     addedTags: Tag[]
@@ -20,8 +26,25 @@ interface State {
 export class App extends React.Component<{}, State> {
     public state: State = {
         addedTags: [],
-        language: i18n_en,
+        language: languageMap.en,
     }
+
+    private languageOptions = [
+        { name: 'Arabic', code: 'AR' },
+        { name: 'Chinese Mandarin', code: 'ZH' },
+        { name: 'English', code: 'EN' },
+        { name: 'French', code: 'FR' },
+        { name: 'German', code: 'DE' },
+        { name: 'Hindi', code: 'HI' },
+        { name: 'Italian', code: 'IT' },
+        { name: 'Polish', code: 'PL' },
+        { name: 'Portuguese', code: 'PT' },
+        { name: 'Russian', code: 'RU' },
+        { name: 'Spanish', code: 'ES' },
+        { name: 'Turkish', code: 'TR' },
+        { name: 'Ukrainian', code: 'UK' },
+        { name: 'Urdu', code: 'UR' },
+    ]
 
     public render() {
         const { addedTags, language } = this.state
@@ -32,21 +55,10 @@ export class App extends React.Component<{}, State> {
                     <h1 className={`Capitalize`}>
                         {language.App.Generic.createNewLog}
                     </h1>
-                    <Selector title='Choose a language'
-                        options={[ 'Spanish',
-                            'English',
-                            'German',
-                            'French',
-                            'Chinese Mandarin',
-                            'Arabic',
-                            'Russian',
-                            'Hindi',
-                            'Portuguese',
-                            'Polish',
-                            'Ukrainian',
-                            'Urdu',
-                            'Turkish',
-                            'Italian' ]}
+                    <Selector
+                        title={language.App.Generic.chooseALanguage}
+                        options={this.languageOptions}
+                        onChange={this.onChangeLanguage}
                     />
                     <label id='switch' className={`Capitalize`}>
                         {language.App.Generic.darkMode}
@@ -71,6 +83,12 @@ export class App extends React.Component<{}, State> {
 
         if (!addedTags.find(addedTag => addedTag.id === tag.id)) {
             this.setState({ addedTags: [ ...addedTags, tag ] })
+        }
+    }
+
+    private onChangeLanguage = (value?: string) => {
+        if (value) {
+            this.setState({ language: languageMap[value] })
         }
     }
 

@@ -19,7 +19,7 @@ export class LogBar extends React.Component<Props> {
                     <Row>
                         <div className='LogBar'>
                             <label>
-                                <input type='text' placeholder={language.App.LogBar.add_title_for_log}/>
+                                <input type='text' placeholder={language.App.LogBar.addTitleForLog}/>
                             </label>
                         </div>
                         <TagList tags={addedTags} />

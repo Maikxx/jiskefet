@@ -1,8 +1,10 @@
 import * as React from 'react'
+import { LanguageOption } from '../../types/Language'
 
 interface Props {
-    options: any[],
+    options: LanguageOption[]
     title: string
+    onChange?: (value?: string) => void
 }
 
 export class Selector extends React.Component<Props> {
@@ -12,17 +14,22 @@ export class Selector extends React.Component<Props> {
         return (
             <label className={'Selector'}>
                 {title}
-                <select name='' id=''>
-                    {options.map(option => {
-                        return (
-                        <option value=''>
-                            {option}
+                <select onChange={this.onChangeLanguage} defaultValue={'en'}>
+                    {options.map(option => (
+                        <option value={option.code.toLowerCase()} key={option.code}>
+                            {option.name}
                         </option>
-                        )
-                    })
-                }
+                    ))}
                 </select>
             </label>
         )
+    }
+
+    private onChangeLanguage = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        const { onChange } = this.props
+
+        if (onChange) {
+            onChange(event.target.value)
+        }
     }
 }

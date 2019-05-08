@@ -1,6 +1,7 @@
 {
     "App": {
         "Generic": {
+            "chooseALanguage": "Choose a language",
             "createNewLog": "Create new log",
             "darkMode": "Dark mode",
             "addNewLog": "Add new log",
@@ -11,7 +12,7 @@
             "createTag": "Create tag"
         },
         "LogBar": {
-            "add_title_for_log": "Add a title for this log"
+            "addTitleForLog": "Add a title for this log"
         },
         "Wysiwyg": {
             "editorText": "Change this text.",

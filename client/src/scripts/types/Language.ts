@@ -1,6 +1,7 @@
 export interface Language {
     App: {
         Generic: {
+            chooseALanguage: string
             createNewLog: string
             darkMode: string
             addNewLog: string
@@ -11,7 +12,7 @@ export interface Language {
             createTag: string
         }
         LogBar: {
-            add_title_for_log: string
+            addTitleForLog: string
         }
         Wysiwyg: {
             editorText: string
@@ -22,4 +23,9 @@ export interface Language {
             addAttachment: string
         }
     }
+}
+
+export interface LanguageOption {
+    name: string
+    code: string
 }
