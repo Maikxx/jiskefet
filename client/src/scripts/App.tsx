@@ -16,6 +16,14 @@ import i18n_es from '../i18n/es.i18n.json'
 import i18n_hi from '../i18n/hi.i18n.json'
 import i18n_ru from '../i18n/ru.i18n.json'
 import i18n_zh from '../i18n/zh.i18n.json'
+import i18n_pl from '../i18n/pl.i18n.json'
+import i18n_pt from '../i18n/pt.i18n.json'
+import i18n_ur from '../i18n/ur.i18n.json'
+import i18n_uk from '../i18n/uk.i18n.json'
+import i18n_it from '../i18n/it.i18n.json'
+import i18n_fr from '../i18n/fr.i18n.json'
+import i18n_ar from '../i18n/ar.i18n.json'
+import i18n_tr from '../i18n/tr.i18n.json'
 
 const languageMap = {
     de: i18n_de,
@@ -24,6 +32,14 @@ const languageMap = {
     hi: i18n_hi,
     ru: i18n_ru,
     zh: i18n_zh,
+    pl: i18n_pl,
+    pt: i18n_pt,
+    ur: i18n_ur,
+    uk: i18n_uk,
+    it: i18n_it,
+    fr: i18n_fr,
+    ar: i18n_ar,
+    tr: i18n_tr,
 }
 
 interface State {
