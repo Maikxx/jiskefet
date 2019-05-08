@@ -1,0 +1,29 @@
+{
+    "App": {
+        "Generic": {
+            "chooseALanguage": "Choisissez une langue",
+            "createNewLog": "Créer un nouveau journal",
+            "darkMode": "Mode noir",
+            "addNewLog": "Ajouter un nouveau journal",
+            "addTags": "Ajoutez des tags",
+            "addExistingTags": "Ajouter des balises existantes",
+            "createNewTag": "Créer un nouveau tag",
+            "name": "Nom",
+            "createTag": "Créer une balise",
+            "subType": "Sous-type",
+            "runType": "Exécuter, tapez",
+            "generic": "Générique"
+        },
+        "LogBar": {
+            "addTitleForLog": "Ajouter un titre à ce journal"
+        },
+        "Wysiwyg": {
+            "editorText": "Modifier ce texte.",
+            "convertToMarkdown": "Conversion à markdown"
+        },
+        "Attachment": {
+            "addAttachment": "Ajouter une pièce jointe",
+            "addYourFiles": "Ajoutez vos fichiers"
+        }
+    }
+}

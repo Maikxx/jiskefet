@@ -1,0 +1,29 @@
+{
+    "App": {
+        "Generic": {
+            "chooseALanguage": "Bir dil seçin",
+            "createNewLog": "Yeni günlük oluştur",
+            "darkMode": "Karanlık mod",
+            "addNewLog": "Yeni günlük Ekle",
+            "addTags": "Etiket Ekle",
+            "addExistingTags": "Varolan etiketleri ekleme",
+            "createNewTag": "Yeni etiket oluştur",
+            "name": "Ad",
+            "createTag": "Etiket oluştur",
+            "subType": "Alt türü",
+            "runType": "Türü Çalıştır",
+            "generic": "Genel"
+        },
+        "LogBar": {
+            "addTitleForLog": "Bu günlük için bir başlık Ekle"
+        },
+        "Wysiwyg": {
+            "editorText": "Bu metni değiştirin.",
+            "convertToMarkdown": "Markdown'a dönüştür"
+        },
+        "Attachment": {
+            "addAttachment": "Ek Ekle",
+            "addYourFiles": "Dosyalarınızı ekleyin"
+        }
+    }
+}

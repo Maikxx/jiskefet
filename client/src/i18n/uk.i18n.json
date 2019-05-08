@@ -1,0 +1,29 @@
+{
+    "App": {
+        "Generic": {
+            "chooseALanguage": "Вибрати мову",
+            "createNewLog": "Створити новий журнал",
+            "darkMode": "Темний режим",
+            "addNewLog": "Додати новий журнал",
+            "addTags": "Додати теги",
+            "addExistingTags": "Додати існуючі теги",
+            "createNewTag": "Створити новий тег",
+            "name": "Ім'я",
+            "createTag": "Створити тег",
+            "subType": "Підтип",
+            "runType": "Тип виконання",
+            "generic": "Родовий"
+        },
+        "LogBar": {
+            "addTitleForLog": "Додати заголовок для цього журналу"
+        },
+        "Wysiwyg": {
+            "editorText": "Змініть цей текст.",
+            "convertToMarkdown": "Перетворити в уцінці"
+        },
+        "Attachment": {
+            "addAttachment": "Додати вкладення",
+            "addYourFiles": "Додайте свої файли"
+        }
+    }
+}

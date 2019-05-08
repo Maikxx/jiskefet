@@ -1,0 +1,29 @@
+{
+    "App": {
+        "Generic": {
+            "chooseALanguage": "Wybrać język",
+            "createNewLog": "Utwórz nowy dziennik",
+            "darkMode": "Tryb ciemny",
+            "addNewLog": "Dodać nowy magazyn",
+            "addTags": "Dodaj tagi",
+            "addExistingTags": "Dodaj istniejące tagi",
+            "createNewTag": "Utworzyć nowy tag",
+            "name": "Nazwa",
+            "createTag": "Utworzyć nowy tag",
+            "subType": "Podtyp",
+            "runType": "Rodzaj wykonania",
+            "generic": "Porodowy"
+        },
+        "LogBar": {
+            "addTitleForLog": "Dodaj nagłówek dla tego magazynu"
+        },
+        "Wysiwyg": {
+            "editorText": "Zmień ten tekst.",
+            "convertToMarkdown": "Przekształcić w уценке"
+        },
+        "Attachment": {
+            "addAttachment": "Dodaj załącznik",
+            "addYourFiles": "Dodaj swoje pliki  "
+        }
+    }
+}

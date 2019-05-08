@@ -1,0 +1,29 @@
+{
+    "App": {
+        "Generic": {
+            "chooseALanguage": "Scegli una lingua",
+            "createNewLog": "Crea un nuovo registro",
+            "darkMode": "Modalità scura",
+            "addNewLog": "Aggiungi nuovo registro",
+            "addTags": "Aggiungi etichette",
+            "addExistingTags": "Aggiungi etichette esistenti",
+            "createNewTag": "Crea una nuova etichetta",
+            "name": "Nome",
+            "createTag": "Crea etichetta",
+            "subType": "Sottotipo",
+            "runType": "Tipo di esecuzione",
+            "generic": "Generico"
+        },
+        "LogBar": {
+            "addTitleForLog": "Aggiunge un titolo per questo registro"
+        },
+        "Wysiwyg": {
+            "editorText": "Cambia questo testo.",
+            "convertToMarkdown": "Converti in markdown"
+        },
+        "Attachment": {
+            "addAttachment": "Aggiungi allegato",
+            "addYourFiles": "Aggiungi i tuoi file"
+        }
+    }
+}

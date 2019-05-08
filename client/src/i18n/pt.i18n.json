@@ -1,0 +1,29 @@
+{
+    "App": {
+        "Generic": {
+            "chooseALanguage": "Escolha uma língua",
+            "createNewLog": "Criar um novo registo",
+            "darkMode": "Modo escuro",
+            "addNewLog": "Adicionar um novo registo",
+            "addTags": "Adicionar marcas",
+            "addExistingTags": "Adicionar marcas existentes",
+            "createNewTag": "Criar uma nova marca",
+            "name": "Nome",
+            "createTag": "Criar uma marca",
+            "subType": "Subtipo",
+            "runType": "Tipo de execução",
+            "generic": "Generico"
+        },
+        "LogBar": {
+            "addTitleForLog": "Adicionar um título para este registo"
+        },
+        "Wysiwyg": {
+            "editorText": "Muda este texto.",
+            "convertToMarkdown": "Converter para a redução"
+        },
+        "Attachment": {
+            "addAttachment": "Anexar",
+            "addYourFiles": "Adicionar os seus ficheiros"
+        }
+    }
+}

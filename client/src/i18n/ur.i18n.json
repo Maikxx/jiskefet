@@ -1,0 +1,29 @@
+{
+    "App": {
+        "Generic": {
+            "chooseALanguage": "ایک زبان کا انتخاب کریں",
+            "createNewLog": "نئے پیدا لاگ ان کریں",
+            "darkMode": "سیاہ موڈ",
+            "addNewLog": "نئے شامل کریں لاگ ان",
+            "addTags": "ٹیگز شامل کریں",
+            "addExistingTags": "شامل موجودہ ٹیگز",
+            "createNewTag": "نئے پیدا ٹیگ",
+            "name": "نام",
+            "createTag": "پیدا ٹیگ",
+            "subType": "ذیلی قسم",
+            "runType": "چلانے کی قسم",
+            "generic": "عام"
+        },
+        "LogBar": {
+            "addTitleForLog": "شامل ایک عنوان اس کے لئے لاگ ان کریں"
+        },
+        "Wysiwyg": {
+            "editorText": "اس کے متن کو تبدیل.",
+            "convertToMarkdown": "تبدیل کرنے کے لئے markdown"
+        },
+        "Attachment": {
+            "addAttachment": "شامل منسلکہ",
+            "addYourFiles": "آپ کی فائلوں کو شامل کریں"
+        }
+    }
+}

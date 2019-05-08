@@ -1,0 +1,29 @@
+{
+    "App": {
+        "Generic": {
+            "chooseALanguage": "اختر a لغة",
+            "createNewLog": "أنشئ سجل جديد",
+            "darkMode": "الوضع المظلم",
+            "addNewLog": "إضافة جديد سجل",
+            "addTags": "إضافة وسوم",
+            "addExistingTags": "إضافة موجود وسوم",
+            "createNewTag": "إنشاء جديد بطاقة",
+            "name": "الاسم",
+            "createTag": "إنشاء بطاقة",
+            "subType": "النوع الفرعي",
+            "runType": "شغل النوع",
+            "generic": "عام"
+        },
+        "LogBar": {
+            "addTitleForLog": "إضافة a عنوان لـ سجل"
+        },
+        "Wysiwyg": {
+            "editorText": "غير هذا النص.",
+            "convertToMarkdown": "حول إلى"
+        },
+        "Attachment": {
+            "addAttachment": "إضافة مرفق",
+            "addYourFiles": "أضف ملفاتك"
+        }
+    }
+}
