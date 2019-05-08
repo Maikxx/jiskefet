@@ -2,10 +2,11 @@ console.log('working');
 
 const form = document.getElementById('form')
 const output = document.getElementById('markdownOutput')
-var createLink = document.getElementById('createLink');
-createLink.onclick = linkChange;
-var createImage = document.getElementById('createImage');
-createImage.onclick = imageChange;
+// var createLink = document.getElementById('createLink');
+// createLink.onclick = linkChange;
+// var createImage = document.getElementById('createImage');
+// createImage.onclick = imageChange;
+
 
 
 form.addEventListener('submit', function (e) {
@@ -21,7 +22,7 @@ form.addEventListener('submit', function (e) {
     newValue = convA(newValue)
     newValue = convImg(newValue)
     newValue = convBq(newValue)
-    console.log(newValue);
+    // console.log(newValue);
     output.innerHTML = newValue;
 })
 
@@ -120,15 +121,15 @@ function convOl(input) {
 }
 
 function convA(input) {
-    var rx1 = /(<div [\w\W]*)(<a href=")(.*)(">)(.*)(<\/a>)(<\/div>)/g
+    var rx1 = /(<a href=")([^"]*)(">)([\w\d\s\:\/\.\-\?\=\&\;]*)(<\/a>)/g
     let get = input.replace(rx1, (...x) => {
-        return `[${x[3]}]`;
+        return `[${x[2]}]`;
     });
     return get;
 }
 
 function convImg(input) {
-    var rx1 = /(<img src=")(.*)(" alt="">)/g
+    var rx1 = /(<img src=")([^"]*)(">)/g
     let get = input.replace(rx1, (...x) => {
         return `![${x[2]}]`;
     });
@@ -145,34 +146,4 @@ function convBq(input) {
         return ``;
     });
     return rem;
-}
-
-function linkChange() {
-    var text = "";
-    if (window.getSelection) {
-        text = String(window.getSelection());
-        const inputValue = document.getElementsByClassName('editor')[0];
-        var newValue = String(inputValue.innerHTML)
-
-        let get = newValue.replace(text, (...x) => {
-            return `<div contentEditable="false"><a href="${x[0]}">${x[0]}</a></div>`
-        });
-
-        inputValue.innerHTML = get
-    }
-}
-
-
-function imageChange() {
-    var text = "";
-    if (window.getSelection) {
-        text = String(window.getSelection());
-        const inputValue = document.getElementsByClassName('editor')[0];
-        var newValue = String(inputValue.innerHTML)
-        let get = text.replace(text, (...x) => {
-            console.log(x[0]);
-            return `<img src="${x[0]}" alt="">`
-        });
-        inputValue.innerHTML = get
-    }
 }

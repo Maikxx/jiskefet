@@ -35,9 +35,11 @@
         </button>
         <button class="tool-items fa fa-list-ul" onclick="document.execCommand('insertunorderedlist', false, '');">
         </button>
-        <button class="tool-items fa fa-link" id="createLink">
+        <button class="tool-items fa fa-link"
+            onclick="document.execCommand('createLink', false, window.getSelection());">
         </button>
-        <button class="tool-items fa fa-image" id="createImage">
+        <button class="tool-items fa fa-image"
+            onclick="document.execCommand('insertImage', false, window.getSelection());">
         </button>
         <button class="tool-items fa fa-quote-left"
             onclick="document.execCommand('formatBlock', false, '<blockquote>');"></button>
@@ -54,6 +56,8 @@
                 <div class="editor" contenteditable>
                     <p>
                         https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500
+                        www.google.nl
+                        <br>https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500
                     </p>
                 </div>
             </div>
