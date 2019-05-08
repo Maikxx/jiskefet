@@ -51,7 +51,7 @@ export class CreateTag extends React.Component<Props, State> {
 
         return (
             <div className={`CreateTags`}>
-                <button type='button' className='collapsible' onClick={() => this.togglePanel()} >
+                <button type='button' className='collapsible' onClick={() => this.togglePanel()}>
                     ADD TAGS
                 </button>
                 {open ? (
