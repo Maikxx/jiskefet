@@ -56,7 +56,7 @@ import path from 'path'
         })
     })
 
-    server.listen(({ port: process.env.PORT || 3000 }), () => {
-        console.info(`App is now open for action on port ${process.env.PORT || 3000}.`)
+    server.listen(({ port: process.env.PORT || 5430 }), () => {
+        console.info(`App is now open for action on port ${process.env.PORT || 5430}.`)
     })
 })()

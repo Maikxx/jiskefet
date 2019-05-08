@@ -3,7 +3,7 @@
 ## Installation
 
 * Make sure to install [yarn](https://yarnpkg.com/en/) or [npm](https://www.npmjs.com).
-* Make sure the **port** specified in the [package.json](package.json) is available (defaults to 3000).
+* Make sure the **port** specified in the [package.json](package.json) is available (defaults to 5430).
 
 * Clone the repository: `git clone git@github.com:Maikxx/jiskefet.git`
 * Navigate into the directory: `cd jiskefet`
@@ -19,7 +19,7 @@ You may have perform the following steps if you get errors running the commands 
 
 * Rename the process environment file to `.env` by doing `cp ./server/.env.example ./server/.env`
 
-The port that now opens is `localhost:3000`.
+The port that now opens is `localhost:5430`.
 
 ### Folder structure
 
