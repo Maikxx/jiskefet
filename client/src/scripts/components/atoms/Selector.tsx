@@ -16,7 +16,11 @@ export class Selector extends React.Component<Props> {
                 {title}
                 <select onChange={this.onChangeLanguage} defaultValue={'en'}>
                     {options.map(option => (
-                        <option value={option.code.toLowerCase()} key={option.code}>
+                        <option
+                            value={option.code.toLowerCase()}
+                            key={option.code}
+                            disabled={option.disabled}
+                        >
                             {option.name}
                         </option>
                     ))}

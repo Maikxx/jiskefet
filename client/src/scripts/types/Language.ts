@@ -31,4 +31,5 @@ export interface Language {
 export interface LanguageOption {
     name: string
     code: string
+    disabled: boolean
 }
