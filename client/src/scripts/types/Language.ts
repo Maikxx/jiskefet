@@ -10,6 +10,9 @@ export interface Language {
             createNewTag: string
             name: string
             createTag: string
+            subType: string
+            runType: string
+            generic: string
         }
         LogBar: {
             addTitleForLog: string

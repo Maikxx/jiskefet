@@ -68,17 +68,17 @@ export class CreateTag extends React.Component<Props, State> {
                             <div className='content'>
                                 <h3 className={`Capitalize`}>{language.App.Generic.addExistingTags}</h3>
                                 <TagList
-                                    category={'Subtype'}
+                                    category={language.App.Generic.subType}
                                     tags={subTypeTags}
                                     addTag={addTag}
                                 />
                                 <TagList
-                                    category={'Runtype'}
+                                    category={language.App.Generic.runType}
                                     tags={runTypeTags}
                                     addTag={addTag}
                                 />
                                 <TagList
-                                    category={'Generic'}
+                                    category={language.App.Generic.generic}
                                     tags={genericTypeTags}
                                     addTag={addTag}
                                 />

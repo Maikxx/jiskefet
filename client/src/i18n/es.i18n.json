@@ -9,7 +9,10 @@
             "addExistingTags": "Añadir etiquetas existentes",
             "createNewTag": "Crear una nueva etiqueta",
             "name": "Nombre",
-            "createTag": "Crear etiqueta"
+            "createTag": "Crear etiqueta",
+            "subType": "Subtipo",
+            "runType": "Tipo de ejecución",
+            "generic": "Genéricas"
         },
         "LogBar": {
             "addTitleForLog": "Añadir un título para este registro"

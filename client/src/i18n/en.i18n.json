@@ -9,7 +9,10 @@
             "addExistingTags": "Add existing tags",
             "createNewTag": "Create new tag",
             "name": "Name",
-            "createTag": "Create tag"
+            "createTag": "Create tag",
+            "subType": "Subtype",
+            "runType": "Runtype",
+            "generic": "Generic"
         },
         "LogBar": {
             "addTitleForLog": "Add a title for this log"
