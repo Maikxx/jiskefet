@@ -1,16 +1,13 @@
 import * as React from 'react'
 import { WysiwygToolbarButton } from './WysiwygToolbarButton'
+import { Header } from '../atoms/Header'
 
-interface Props {
-    className?: string
-}
+interface Props {}
 
 export class WysiwygToolbar extends React.Component<Props> {
     public render() {
-        const { className } = this.props
-
         return (
-            <header className={`WysiwygToolbar ${className}`}>
+            <Header className={`WysiwygToolbar`}>
                 <WysiwygToolbarButton type={`italic`} />
                 <WysiwygToolbarButton type={`bold`} />
                 <WysiwygToolbarButton type={`strikeThrough`}/>
@@ -26,7 +23,7 @@ export class WysiwygToolbar extends React.Component<Props> {
                 <WysiwygToolbarButton type={`image`}/>
                 <WysiwygToolbarButton type={`formatBlock`} isForQuote={true}/>
                 <WysiwygToolbarButton type={`insertHorizontalRule`}/>
-            </header>
+            </Header>
         )
     }
 }
