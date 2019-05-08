@@ -1,9 +1,8 @@
 import * as React from 'react'
 import { TagList } from '../atoms/TagList'
-import { getCurrentWindowOrigin } from '../../utils/url'
 import { Tag } from '../../types/Database'
 import socketIO from 'socket.io-client'
-import { getTags } from '../../utils/fetchers'
+import { getTags, createNewTag } from '../../utils/fetchers'
 import { Button } from '../atoms/Button'
 import { LanguageContext } from '../LanguageProvider'
 import { Language } from '../../types/Language'
@@ -106,7 +105,7 @@ export class CreateTag extends React.Component<Props, State> {
         )
     }
 
-    private onCreateNewTag = async (event: React.FormEvent<HTMLFormElement>) => {
+    private onCreateNewTag = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
 
         const createTagButton = this.createTagButtonRef.current
@@ -120,27 +119,7 @@ export class CreateTag extends React.Component<Props, State> {
             const { value } = input
 
             if (value && typeof value === 'string' && value.length > 0) {
-                const url = `${getCurrentWindowOrigin()}/create-tag`
-                const fetchVariables = {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ tagName: value }),
-                }
-
-                try {
-                    const response = await fetch(url, fetchVariables)
-                    const data = await response.json()
-
-                    if (!data.success) {
-                        throw new Error(data.error)
-                    } else {
-                        console.info('Successfully added a tag!')
-                    }
-                } catch (error) {
-                    throw new Error(error.message)
-                }
+                createNewTag(value)
             } else {
                 throw new Error('You have not given a valid name to the server!')
             }
