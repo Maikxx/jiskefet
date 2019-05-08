@@ -70,21 +70,24 @@ export class CreateTag extends React.Component<Props, State> {
                         </Button>
                         {open ? (
                             <div className='content'>
-                                <h3 className={`Capitalize`}>{language.App.Generic.addExistingTags}</h3>
+                                <h3 className={`Capitalize`}>
+                                    {language.App.Generic.addExistingTags}
+                                </h3>
                                 <TagList
-                                    category={language.App.Generic.subType}
+                                    categoryName={language.App.Generic.subType}
                                     tags={subTypeTags}
                                     addTag={addTag}
                                 />
                                 <TagList
-                                    category={language.App.Generic.runType}
+                                    categoryName={language.App.Generic.runType}
                                     tags={runTypeTags}
                                     addTag={addTag}
                                 />
                                 <TagList
-                                    category={language.App.Generic.generic}
+                                    categoryName={language.App.Generic.generic}
                                     tags={genericTypeTags}
                                     addTag={addTag}
+                                    isEditable={true}
                                 />
 
                                 <h3 className={`Capitalize`}>{language.App.Generic.createNewTag}</h3>
