@@ -12,10 +12,12 @@ import { Selector } from './components/atoms/Selector'
 
 import i18n_en from '../i18n/en.i18n.json'
 import i18n_es from '../i18n/es.i18n.json'
+import i18n_ru from '../i18n/ru.i18n.json'
 
 const languageMap = {
     en: i18n_en,
     es: i18n_es,
+    ru: i18n_ru,
 }
 
 interface State {

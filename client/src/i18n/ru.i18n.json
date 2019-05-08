@@ -1,0 +1,29 @@
+{
+    "App": {
+        "Generic": {
+            "chooseALanguage": "Выберите язык",
+            "createNewLog": "Создать новый журнал",
+            "darkMode": "Темный режим",
+            "addNewLog": "Добавить новый журнал",
+            "addTags": "Добавить теги",
+            "addExistingTags": "Добавить существующие теги",
+            "createNewTag": "Создать новый тег",
+            "name": "Имя",
+            "createTag": "Создать тег",
+            "subType": "подтип",
+            "runType": "Рантип",
+            "generic": "родовый"
+        },
+        "LogBar": {
+            "addTitleForLog": "Добавить название для этого журнала"
+        },
+        "Wysiwyg": {
+            "editorText": "Измени текст.",
+            "convertToMarkdown": "Преобразовать в уценку"
+        },
+        "Attachment": {
+            "addAttachment": "Добавить вложение",
+            "addYourFiles": "Добавить файлы"
+        }
+    }
+}
