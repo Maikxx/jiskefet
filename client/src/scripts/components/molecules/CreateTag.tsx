@@ -4,6 +4,7 @@ import { getCurrentWindowOrigin } from '../../utils/url'
 import { Tag } from '../../types/Database'
 import socketIO from 'socket.io-client'
 import { getTags } from '../../utils/fetchers'
+import { Button } from '../atoms/Button'
 
 interface Props {
     addTag: (tag: Tag) => void
@@ -51,12 +52,16 @@ export class CreateTag extends React.Component<Props, State> {
 
         return (
             <div className={`CreateTags`}>
-                <button type='button' className='collapsible' onClick={() => this.togglePanel()}>
-                    ADD TAGS
-                </button>
+                <Button
+                    type='button'
+                    className='collapsible Capitalize'
+                    onClick={() => this.togglePanel()}
+                >
+                    Add tags
+                </Button>
                 {open ? (
                     <div className='content'>
-                        <h3>ADD EXISTING TAG</h3>
+                        <h3 className={`Capitalize`}>Add existing tag</h3>
                         <TagList
                             category={'Subtype'}
                             tags={subTypeTags}
@@ -73,7 +78,7 @@ export class CreateTag extends React.Component<Props, State> {
                             addTag={addTag}
                         />
 
-                        <h3>CREATE NEW TAG</h3>
+                        <h3 className={`Capitalize`}>Create new tag</h3>
                         <form onSubmit={this.onCreateNewTag}>
                             <label>
                                 Name

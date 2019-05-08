@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { convBold, convItalic, convStrikethrough, convHeading, convUl, convOl, convA, convImg, convBq } from '../../utils/converters'
+import { Button } from '../atoms/Button'
 
 interface Props {
     className?: string
@@ -20,7 +21,7 @@ export class WysiwygForm extends React.Component<Props> {
                             <p>Change this text</p>
                         </div>
                     </div>
-                    <button type='submit'>Convert to Markdown</button>
+                    <Button type='submit'>Convert to Markdown</Button>
                 </fieldset>
             </form>
         )

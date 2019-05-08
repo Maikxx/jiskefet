@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Button } from '../atoms/Button'
 
 type WysiwygToolbarButtonType = 'italic'
     | 'bold'
@@ -23,9 +24,9 @@ export class WysiwygToolbarButton extends React.Component<Props> {
         const { headingLevel } = this.props
 
         return (
-            <button className={this.getClassName()} onClick={this.onClick} type={`button`}>
+            <Button className={this.getClassName()} onClick={this.onClick} type={`button`}>
                 {headingLevel && headingLevel.toUpperCase() || null}
-            </button>
+            </Button>
         )
     }
 

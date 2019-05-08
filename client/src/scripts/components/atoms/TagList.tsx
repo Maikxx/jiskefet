@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Tag } from '../../types/Database'
+import { Button } from './Button'
 
 interface Props {
     category?: string
@@ -21,9 +22,14 @@ export class TagList extends React.Component<Props> {
                 <ul>
                     {tags.map(tag => (
                         <li key={tag.id} data-tag-id={tag.id}>
-                            <button type='button' onClick={() => this.onAddTag(tag)} key={tag.id} data-tag-id={tag.id}>
+                            <Button
+                                type={`button`}
+                                onClick={() => this.onAddTag(tag)}
+                                key={tag.id}
+                                data-tag-id={tag.id}
+                            >
                                 {tag.name}
-                            </button>
+                            </Button>
                         </li>
                     ))}
                 </ul>
