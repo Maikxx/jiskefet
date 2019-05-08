@@ -30,14 +30,12 @@ class App extends React.Component<{}, State> {
                     <input id='toggle' type='checkbox' onClick={this.switchLightingMode}/>
                 </label>
                 </Row>
-                <div>
-                    <LogBar addedTags={addedTags}/>
-                    <Wysiwig />
-                    <CreateTag addTag={this.onTagAdded}/>
-                    <Attachment />
+                <LogBar addedTags={addedTags}/>
+                <Wysiwig />
+                <CreateTag addTag={this.onTagAdded}/>
+                <Attachment />
 
-                    <button className='CreateLog' type='submit'>ADD NEW LOG</button>
-                </div>
+                <button className='CreateLog' type='submit'>ADD NEW LOG</button>
             </div >
         )
     }
