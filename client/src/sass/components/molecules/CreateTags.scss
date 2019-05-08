@@ -44,6 +44,9 @@
         display: block;
         width: 100%;
         padding: 0 .75em;
+        transition: max-height 0.3s ease-out;
+        height:auto;
+        max-height:10000px;
     }
 
     .plus {
