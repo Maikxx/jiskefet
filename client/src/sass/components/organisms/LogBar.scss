@@ -1,3 +1,8 @@
 .LogBar {
     margin-right: 1em;
+    min-width: 100%;
+
+    input {
+        width: 100%;
+    }
 }

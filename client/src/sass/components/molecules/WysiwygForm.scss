@@ -14,13 +14,10 @@
         padding-top: 1em;
 
         div {
-            outline: transparent;
-        }
-
-        div p {
             max-width: 70ch;
             padding-left: 1.5em;
             line-height: 1.5em;
+            outline: transparent;
         }
     }
 
@@ -35,6 +32,7 @@
         margin: 1em 0;
         position: absolute;
         bottom: 0;
+        left: 2em;
     }
 
     button:hover {
