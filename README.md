@@ -51,10 +51,10 @@ Both the clients `src/sass` and `src/scripts` folders should have the following 
 
 * [ ] Autospelling check for tag names
 * [ ] Drag & drop attachment
-* [ ] Enable typing markdown directly
 * [ ] Editing tags
-* [ ] Tag restriction - only some people can create
+* [ ] Enable typing markdown directly
 * [ ] Restrict tags by name duplicated
+* [ ] Tag restriction - only some people can create
 
 ## Issues
 
