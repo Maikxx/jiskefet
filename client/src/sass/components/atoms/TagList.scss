@@ -26,6 +26,18 @@
         font-weight: bold;
     }
 
+    .TagItem:nth-of-type(1n+1) button {
+        background-color: #FF8887;
+    }
+
+    .TagItem:nth-of-type(2n+1) button {
+        background-color: #E6605D;
+    }
+
+    .TagItem:nth-of-type(3n+1) button {
+        background-color: #E88626;
+    }
+
     button:hover,
     button:focus {
         background-color: #FFAC5A;
