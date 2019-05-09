@@ -21,3 +21,13 @@
     background-color: #1c2c38;
     border-radius: .5em;
 }
+
+body.light {
+    .Overlay {
+        background-color: rgba(255, 255, 255, 0.75)
+    }
+    
+    .BaseModal {
+        background-color: #E2ECF5;
+    }
+}
