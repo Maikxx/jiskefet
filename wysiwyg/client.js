@@ -160,8 +160,6 @@ function logKey(e) {
 function name(newChar, lastChar, lastSixChars, e, secondLast) {
     var specialChars = ['*', '_', '~', '+', '-', '[', '(', '#']
 
-
-
     setTimeout(function () {
         var textField = document.getElementsByClassName('editor')[0]
         var checkTag = String(textField.innerHTML).slice(-8)
@@ -173,43 +171,46 @@ function name(newChar, lastChar, lastSixChars, e, secondLast) {
         console.log(checkTag);
 
 
-        if (specialChars.includes(newChar)) {
-            console.log(' ');
-            var closingTagFix = (String(textField.innerHTML).slice(-(checkTag.length + 3)));
-            closingTagFix = closingTagFix.slice(0, 1)
-            var duplicate = (newChar === lastChar);
-            var caretNum = textField.innerText.length
-            // var typedHeading;
 
-            if ((newChar === '*' || newChar === '_') && (duplicate === false) && (checkTag.includes('</') === false)) {
-                console.log('italic');
-                textField.innerHTML = textField.innerHTML.slice(0, -1) + `<em>${newChar}</em>`
-                placeCaretAtEnd(textField);
+        console.log(' ');
+        var closingTagFix = (String(textField.innerHTML).slice(-(checkTag.length + 3)));
+        closingTagFix = closingTagFix.slice(0, 1)
+        var duplicate = (newChar === lastChar);
+        var caretNum = textField.innerText.length
+        console.log(newChar);
+        console.log(lastChar);
+        console.log(secondLast);
+        // var typedHeading;
 
-            }
-            if ((newChar === '*' || newChar === '_') && (duplicate === true) && (checkTag.includes('</') === false)) {
-                console.log('bold');
-                textField.innerHTML = textField.innerHTML.slice(0, -1) + `<b>${newChar}</b>`
-                placeCaretAtEnd(textField);
-            }
-            if ((newChar === '~') && (duplicate === true)) {
-                console.log('strikethrough');
-            }
-            if ((newChar === '+' || newChar === '-') && (lastChar === '/')) {
-                console.log('bullitpoint');
-            }
-            if ((newChar === '[') && (lastChar !== '!')) {
-                console.log('link');
-            }
-            if ((newChar === '[') && (lastChar === '!')) {
-                console.log('image');
-            }
-            if (((lastChar !== '#') && (newChar === '#')) || ((lastChar = '#') && (newChar === '#')) && (checkTag.includes('</') === false)) {
-                var countHeadingLvl = String(lastSixChars.replace(/[^#]/g, "").length);
-                var typedHeading = 'h' + countHeadingLvl;
-                console.log(typedHeading);
-            }
+        if (((lastChar === '*' || lastChar === '_') && (newChar !== lastChar)) && (lastChar !== secondLast) && (checkTag.includes('</') === false)) {
+            console.log('italic');
+            textField.innerHTML = textField.innerHTML.slice(0, -1) + `<em>${newChar}</em>`
+            placeCaretAtEnd(textField);
+
         }
+        if ((lastChar === '*' || lastChar === '_') && (lastChar === secondLast) && (checkTag.includes('</') === false)) {
+            console.log('bold');
+            textField.innerHTML = textField.innerHTML.slice(0, -1) + `<b>${newChar}</b>`
+            placeCaretAtEnd(textField);
+        }
+        if ((newChar === '~') && (duplicate === true)) {
+            console.log('strikethrough');
+        }
+        if ((newChar === '+' || newChar === '-') && (lastChar === '/')) {
+            console.log('bullitpoint');
+        }
+        if ((newChar === '[') && (lastChar !== '!')) {
+            console.log('link');
+        }
+        if ((newChar === '[') && (lastChar === '!')) {
+            console.log('image');
+        }
+        if (((lastChar !== '#') && (newChar === '#')) || ((lastChar = '#') && (newChar === '#')) && (checkTag.includes('</') === false)) {
+            var countHeadingLvl = String(lastSixChars.replace(/[^#]/g, "").length);
+            var typedHeading = 'h' + countHeadingLvl;
+            console.log(typedHeading);
+        }
+
 
         if (((checkTag === '</em>') && (lastChar !== '*') && (newChar === '*') && (e.keyCode !== 32))) {
             console.log('closingTag');
@@ -218,6 +219,21 @@ function name(newChar, lastChar, lastSixChars, e, secondLast) {
             var LastInnerHtmlValue = String(textField.innerHTML).slice(-(checkTag.length))
             console.log(`last = ${LastInnerHtmlValue}`);
             textField.innerHTML = `${FirstInnerHtmlValue}${LastInnerHtmlValue}${newChar}`
+            placeCaretAtEnd(textField);
+        }
+        if (((checkTag === '</b>') && (newChar === '*' || newChar === '_') && (e.keyCode !== 32))) {
+            console.log('closing bold');
+            console.log(lastChar);
+            var FirstInnerHtmlValue = String(textField.innerHTML).slice(0, -(checkTag.length + 1))
+            var LastInnerHtmlValue = String(textField.innerHTML).slice(-(checkTag.length))
+            textField.innerHTML = FirstInnerHtmlValue + LastInnerHtmlValue + newChar;
+            placeCaretAtEnd(textField);
+        }
+        if ((checkTag.includes('</strike>') && ((specialChars.includes(newChar)) && (specialChars.includes(lastChar)) && (closingTagFix !== '>') && (e.keyCode !== 32)))) {
+            console.log('closing strikeThrough');
+            var FirstInnerHtmlValue = String(textField.innerHTML).slice(0, -(checkTag.length + 1))
+            var LastInnerHtmlValue = String(textField.innerHTML).slice(-(checkTag.length))
+            textField.innerHTML = FirstInnerHtmlValue + LastInnerHtmlValue + newChar;
             placeCaretAtEnd(textField);
         }
 
