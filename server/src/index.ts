@@ -45,7 +45,7 @@ import path from 'path'
             const newlyAddedTag = await addNewTagToDatabase(tagName)
             sockets.emit('tag-created', newlyAddedTag)
         } catch (error) {
-            response.status(500).json({
+            response.status(409).json({
                 success: false,
                 error: error.message,
             })

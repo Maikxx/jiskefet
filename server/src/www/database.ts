@@ -26,6 +26,11 @@ export async function addNewTagToDatabase(tagName: string) {
 
         const { tags, types } = data
         const lastTag = tags[tags.length - 1]
+        const tagNameExists = tags.find(tag => tag.name.toLowerCase() === tagName.toLowerCase())
+
+        if (tagNameExists) {
+            throw new Error('This tagname is already used in another tag. Please provide another name!')
+        }
 
         if (lastTag) {
             const newTag = {

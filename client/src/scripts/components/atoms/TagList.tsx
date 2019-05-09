@@ -8,7 +8,7 @@ interface Props {
     tags: Tag[]
     isEditable?: boolean
     isRemovable?: boolean
-    onRemove: (tag: Tag) => void
+    onRemove?: (tag: Tag) => void
 }
 
 export class TagList extends React.Component<Props> {
@@ -33,7 +33,7 @@ export class TagList extends React.Component<Props> {
                                 className='tagName'
                             >
                                 {tag.name}
-                                {isRemovable && (
+                                {(isRemovable && onRemove) && (
                                     <div onClick={() => onRemove(tag)}>Remove</div>
                                 )}
                                 {isEditable && (
