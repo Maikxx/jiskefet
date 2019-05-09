@@ -1,5 +1,8 @@
 .ToastContainer {
     &__toast {
+        position: fixed!important;
+        bottom: 2%!important;
+        right: 2%!important;
         border-radius: .35em!important;
         color: #1C2C38!important;
         padding: 1em!important;
@@ -8,6 +11,8 @@
 
         &.Toastify__toast--default {
             background-color: #E88626!important;
+            border: .5px solid #ce6a07!important;
+            box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, .2);
 
             &:hover,
             &:focus {
@@ -18,6 +23,8 @@
         &.Toastify__toast--error {
             background-color: #E6605D!important;
             color: #FFFFFF!important;
+            border: .5px solid #1C2C38!important;
+            box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, .2);
 
             &:hover,
             &:focus {
