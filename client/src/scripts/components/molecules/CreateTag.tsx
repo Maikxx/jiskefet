@@ -120,6 +120,7 @@ export class CreateTag extends React.Component<Props, State> {
 
             if (value && typeof value === 'string' && value.length > 0) {
                 createNewTag(value)
+                input.value = ''
             } else {
                 throw new Error('You have not given a valid name to the server!')
             }
