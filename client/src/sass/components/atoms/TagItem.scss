@@ -24,6 +24,7 @@
         margin-left: .5em;
         margin-right: .5em;
         padding: .5em .2em;
+        transition: all .2s ease;
 
         .trash-1{
             fill:#e6605d
@@ -34,6 +35,7 @@
         min-width: 25px;
         max-width: 25px;
         padding: .5em .2em;
+        transition: all .2s ease;
 
         .accept-1{
             fill:#fff
@@ -58,6 +60,7 @@
         max-width: 15px;
         min-width: 15px;
         margin-left: .75em;
+        transition: all .2s ease;
 
         .remove-1{
             fill: #1c2c38;

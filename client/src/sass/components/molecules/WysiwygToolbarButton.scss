@@ -6,10 +6,10 @@
     border: none;
     padding: 1em;
     text-align: center;
+    transition: all .2s ease;
     font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,  'Helvetica Neue', sans-serif
 }
 
 .WysiwygToolbar__item:hover {
     background-color: #FFAC5A;
-    transition: all .2s ease;
 }

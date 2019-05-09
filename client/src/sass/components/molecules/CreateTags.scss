@@ -23,6 +23,7 @@
         padding: 1em;
         border-radius: .35em;
         margin-left: 1em;
+        margin-right: 1em;
     }
 
     .collapsible {
@@ -48,8 +49,6 @@
     .content {
         display: block;
         width: 100%;
-        padding: 0 .75em;
-        transition: max-height 0.3s ease-out;
         height:auto;
         max-height:10000px;
     }

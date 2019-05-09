@@ -6,6 +6,7 @@ import { getTags, createNewTag } from '../../utils/fetchers'
 import { Button } from '../atoms/Button'
 import { LanguageContext } from '../LanguageProvider'
 import { Language } from '../../types/Language'
+import { Row } from '../atoms/Row'
 
 interface Props {
     addTag: (tag: Tag) => void
@@ -92,11 +93,13 @@ export class CreateTag extends React.Component<Props, State> {
 
                                 <h3 className={`Capitalize`}>{language.App.Generic.createNewTag}</h3>
                                 <form onSubmit={this.onCreateNewTag}>
-                                    <label>
-                                        {language.App.Generic.name}
-                                        <input type='text' ref={this.tagNameInputRef}/>
-                                    </label>
-                                    <button type='submit' ref={this.createTagButtonRef}>{language.App.Generic.createTag}</button>
+                                    <Row>
+                                        <label>
+                                            {language.App.Generic.name}
+                                            <input type='text' ref={this.tagNameInputRef}/>
+                                        </label>
+                                        <button type='submit' ref={this.createTagButtonRef}>{language.App.Generic.createTag}</button>
+                                    </Row>
                                 </form>
                             </div>
                         ) : null}
