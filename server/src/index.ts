@@ -4,8 +4,9 @@ import helmet from 'helmet'
 import http from 'http'
 import bodyParser from 'body-parser'
 import { setupSockets } from './www/sockets'
-import { getDataFromDatabase, addNewTagToDatabase } from './www/database'
 import path from 'path'
+import { getTagsRoute, getIndexRoute } from './routes/getRoutes'
+import { postAddTagRoute } from './routes/postRoutes'
 
 (async () => {
     const app = express()
@@ -18,43 +19,9 @@ import path from 'path'
     app.use(bodyParser.urlencoded({ extended: true }))
     app.use(bodyParser.json())
 
-    app.get('/', (request: express.Request, response: express.Response) => {
-        response.sendFile(path.join(__dirname, '../public/index.html'))
-    })
-
-    app.get('/get-tags', async (request: express.Request, response: express.Response) => {
-        try {
-            const data = await getDataFromDatabase()
-
-            response.status(200).json({
-                success: true,
-                data: data.tags,
-            })
-        } catch (error) {
-            response.status(500).json({
-                success: false,
-                error: error.message,
-            })
-        }
-    })
-
-    app.post('/create-tag', async (request: express.Request, response: express.Response) => {
-        const { tagName } = request.body
-
-        try {
-            const newlyAddedTag = await addNewTagToDatabase(tagName)
-            sockets.emit('tag-created', newlyAddedTag)
-        } catch (error) {
-            response.status(409).json({
-                success: false,
-                error: error.message,
-            })
-        }
-
-        response.status(200).json({
-            success: true,
-        })
-    })
+    app.get('/', getIndexRoute)
+    app.get('/get-tags', getTagsRoute)
+    app.post('/create-tag', postAddTagRoute(sockets))
 
     server.listen(({ port: process.env.PORT || 5430 }), () => {
         console.info(`App is now open for action on port ${process.env.PORT || 5430}.`)
