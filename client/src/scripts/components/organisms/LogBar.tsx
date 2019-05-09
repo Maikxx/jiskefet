@@ -7,11 +7,12 @@ import { Language } from '../../types/Language'
 
 interface Props {
     addedTags: Tag[]
+    onRemove: (tag: Tag) => void
 }
 
 export class LogBar extends React.Component<Props> {
     public render() {
-        const { addedTags } = this.props
+        const { addedTags, onRemove } = this.props
 
         return (
             <LanguageContext.Consumer>
@@ -22,7 +23,7 @@ export class LogBar extends React.Component<Props> {
                                 <input type='text' placeholder={language.App.LogBar.addTitleForLog}/>
                             </label>
                         </div>
-                        <TagList tags={addedTags} />
+                        <TagList tags={addedTags} isRemovable={true} onRemove={onRemove}/>
                     </Row>
                 )}
             </LanguageContext.Consumer>

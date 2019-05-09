@@ -88,7 +88,7 @@ export class App extends React.Component<{}, State> {
                         <input id='toggle' type='checkbox' onClick={this.switchLightingMode}/>
                     </label>
                 </Row>
-                <LogBar addedTags={addedTags}/>
+                <LogBar addedTags={addedTags} onRemove={this.onRemoveTag}/>
                 <Wysiwig />
                 <CreateTag addTag={this.onTagAdded}/>
                 <Attachment />
@@ -116,5 +116,15 @@ export class App extends React.Component<{}, State> {
 
     private switchLightingMode = () => {
         document.body.classList.toggle('light')
+    }
+
+    private onRemoveTag = (tag: Tag) => {
+        const { addedTags } = this.state
+
+        const tagIndex = addedTags.findIndex(addedTag => addedTag.id === tag.id)
+
+        addedTags.splice(tagIndex, 1)
+
+        this.setState({ addedTags })
     }
 }
