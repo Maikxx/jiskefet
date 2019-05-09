@@ -47,17 +47,27 @@ Both the clients `src/sass` and `src/scripts` folders should have the following 
 * You can find the atomic design principles [here](./docs/ATOMIC.md).
 * You can view the project overview [here](./docs/PROJECT_OVERVIEW.md).
 
+## Features
+
+* Real-time creating tags
+* Real-time editing tags
+* Real-time removing tags
+* Log creation system redesign
+* Ability to change the language of the whole page to one of the 14 most used languages.
+* Dark / Light mode
+* Editor (wysiwyg) that converts to markdown
+
 ## Process
 
 * [ ] Animations
 * [ ] Autospelling check for tag names
 * [ ] Drag & drop attachment
-* [X] Editing tags
 * [ ] Enable typing markdown directly
 * [ ] Error toasts
 * [ ] Refactor client-side code into components
 * [ ] Remove tag confirm modal
 * [ ] Tag restriction - only some people can create
+* [X] Editing tags
 * [X] Restrict tags by name duplicated
 
 ## Issues
