@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Tag } from '../../types/Database'
-import { Button } from './Button'
+import { Button } from '../atoms/Button'
 
 interface Props {
     categoryName?: string

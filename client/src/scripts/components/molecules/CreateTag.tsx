@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { TagList } from '../atoms/TagList'
+import { TagList } from './TagList'
 import { Tag } from '../../types/Database'
 import socketIO from 'socket.io-client'
 import { getTags, createNewTag } from '../../utils/fetchers'
