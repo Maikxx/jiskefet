@@ -58,9 +58,8 @@ export class App extends React.Component<{}, State> {
                 </Row>
                 <LogBar addedTags={addedTags} onRemove={this.onRemoveTag}/>
                 <Wysiwig />
-                <CreateTag addTag={this.onTagAdded}/>
+                <CreateTag addTag={this.onTagAdded} onRemoveTag={this.onTagRemoved}/>
                 <Attachment />
-
                 <Button className='CreateLog Capitalize' type='submit'>
                     {language.App.Generic.addNewLog}
                 </Button>
@@ -73,6 +72,16 @@ export class App extends React.Component<{}, State> {
 
         if (!addedTags.find(addedTag => addedTag.id === tag.id)) {
             this.setState({ addedTags: [ ...addedTags, tag ] })
+        }
+    }
+
+    private onTagRemoved = (tag: Tag) => {
+        const { addedTags } = this.state
+        const tagToRemoveIndex = addedTags.findIndex(addedTag => addedTag.id === tag.id)
+
+        if (tagToRemoveIndex > 0) {
+            addedTags.splice(tagToRemoveIndex, 1)
+            this.setState({ addedTags })
         }
     }
 

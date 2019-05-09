@@ -9,6 +9,7 @@ import { Language } from '../../types/Language'
 
 interface Props {
     addTag: (tag: Tag) => void
+    onRemoveTag: (tag: Tag) => void
 }
 
 interface State {
@@ -156,10 +157,12 @@ export class CreateTag extends React.Component<Props, State> {
     }
 
     private onTagRemoved = (tagId: number) => {
+        const { onRemoveTag } = this.props
         const { tags } = this.state
         const tagToRemoveIndex = tags.findIndex(tag => tag.id === tagId)
 
         if (tagToRemoveIndex > 0) {
+            onRemoveTag(tags[tagToRemoveIndex])
             tags.splice(tagToRemoveIndex, 1)
             this.setState({ tags })
         }

@@ -65,7 +65,7 @@ export async function updateTagName(id: number, name: string) {
 
 export async function removeTag(id: number) {
     if (typeof id === 'number') {
-        const url = `${getCurrentWindowOrigin()}/edit-tag`
+        const url = `${getCurrentWindowOrigin()}/remove-tag`
         const fetchVariables = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

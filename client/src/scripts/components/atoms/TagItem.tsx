@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Tag } from '../../types/Database'
 import { Button } from '../atoms/Button'
 import { Row } from './Row'
-import { updateTagName } from '../../utils/fetchers'
+import { updateTagName, removeTag } from '../../utils/fetchers'
 import { ModalBase } from '../organisms/ModalBase'
 
 interface Props {
@@ -60,6 +60,7 @@ export class TagItem extends React.Component<Props, State> {
                                         title={'Remove tag'}
                                         firstButton={'Cancel'}
                                         secondButton={'Remove'}
+                                        onAccept={() => this.onRemoveTag(tag)}
                                         renderButton={openModal => (
                                             <svg className='trash' onClick={openModal} xmlns='http://www.w3.org/2000/svg' viewBox='0 0 432.6 486.4'>
                                                 <path className='trash-1' d='M419.1 70H317.9V53.5A53.6 53.6 0 0 0 264.4 0h-96.2a53.6 53.6 0 0 0-53.5 53.5V70H13.5a13.5 13.5 0 0 0 0 27h24.4v317.2a72.3 72.3 0 0 0 72.2 72.2h212.4a72.3 72.3 0 0 0 72.2-72.2V97h24.4a13.5 13.5 0 0 0 0-27zM141.7 53.5A26.6 26.6 0 0 1 168.2 27h96.2a26.6 26.6 0 0 1 26.5 26.5V70H141.7zm226 360.7a45.3 45.3 0 0 1-45.2 45.2H110.1a45.3 45.3 0 0 1-45.2-45.2V97h302.9v317.2z'/>
@@ -108,5 +109,10 @@ export class TagItem extends React.Component<Props, State> {
         } else {
             this.setState({ isBeingEdited: false })
         }
+    }
+
+    private onRemoveTag = async (tag: Tag) => {
+        await removeTag(tag.id)
+        this.setState({ isBeingEdited: false })
     }
 }

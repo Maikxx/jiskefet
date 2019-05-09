@@ -6,17 +6,18 @@ interface Props {
     firstButton: string
     secondButton: string
     onClose: () => void
+    onAccept?: () => void
 }
 
 export class ModalFooter extends React.Component<Props> {
     public render() {
-        const { firstButton, secondButton, onClose } = this.props
+        const { firstButton, secondButton, onClose, onAccept } = this.props
 
         return (
             <footer>
                 <Row spaceBetween={true}>
                     <Button onClick={onClose}>{firstButton}</Button>
-                    <Button>{secondButton}</Button>
+                    <Button onClick={onAccept}>{secondButton}</Button>
                 </Row>
             </footer>
         )

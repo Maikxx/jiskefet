@@ -9,6 +9,7 @@ interface Props {
     title: string
     firstButton: string
     secondButton: string
+    onAccept?: () => void
 }
 
 interface State {
@@ -44,10 +45,20 @@ export class ModalBase extends React.Component<Props, State> {
                         firstButton={firstButton}
                         secondButton={secondButton}
                         onClose={this.closeModal}
+                        onAccept={this.onAccept}
                     />
                 </Modal>
             </React.Fragment>
         )
+    }
+
+    private onAccept = () => {
+        const { onAccept } = this.props
+
+        if (onAccept) {
+            onAccept()
+            this.closeModal()
+        }
     }
 
     private openModal = () => {

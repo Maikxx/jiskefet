@@ -6,7 +6,7 @@ import bodyParser from 'body-parser'
 import { setupSockets } from './www/sockets'
 import path from 'path'
 import { getTagsRoute, getIndexRoute } from './routes/getRoutes'
-import { postAddTagRoute, postEditTagRoute } from './routes/postRoutes'
+import { postAddTagRoute, postEditTagRoute, postRemoveTagRoute } from './routes/postRoutes'
 
 (async () => {
     const app = express()
@@ -23,6 +23,7 @@ import { postAddTagRoute, postEditTagRoute } from './routes/postRoutes'
     app.get('/get-tags', getTagsRoute)
     app.post('/create-tag', postAddTagRoute(sockets))
     app.post('/edit-tag', postEditTagRoute(sockets))
+    app.post('/remove-tag', postRemoveTagRoute(sockets))
 
     server.listen(({ port: process.env.PORT || 5430 }), () => {
         console.info(`App is now open for action on port ${process.env.PORT || 5430}.`)
