@@ -12,7 +12,9 @@
             "createTag": "Создать тег",
             "subType": "подтип",
             "runType": "Рантип",
-            "generic": "родовый"
+            "generic": "родовый",
+            "remove": "Удалять",
+            "cancel": "Отмена"
         },
         "LogBar": {
             "addTitleForLog": "Добавить название для этого журнала"

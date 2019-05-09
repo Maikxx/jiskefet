@@ -12,7 +12,9 @@
             "createTag": "پیدا ٹیگ",
             "subType": "ذیلی قسم",
             "runType": "چلانے کی قسم",
-            "generic": "عام"
+            "generic": "عام",
+            "remove": "دور",
+            "cancel": "منسوخ"
         },
         "LogBar": {
             "addTitleForLog": "شامل ایک عنوان اس کے لئے لاگ ان کریں"

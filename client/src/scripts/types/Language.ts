@@ -13,6 +13,8 @@ export interface Language {
             subType: string
             runType: string
             generic: string
+            remove: string
+            cancel: string
         }
         LogBar: {
             addTitleForLog: string

@@ -12,7 +12,9 @@
             "createTag": "创建标签",
             "subType": "子类型",
             "runType": "运行类型",
-            "generic": "通用"
+            "generic": "通用",
+            "remove": "删除",
+            "cancel": "取消"
         },
         "LogBar": {
             "addTitleForLog": "添加此日志的标题"

@@ -12,7 +12,9 @@
             "createTag": "Criar uma marca",
             "subType": "Subtipo",
             "runType": "Tipo de execução",
-            "generic": "Generico"
+            "generic": "Generico",
+            "remove": "Remover",
+            "cancel": "Cancelar"
         },
         "LogBar": {
             "addTitleForLog": "Adicionar um título para este registo"

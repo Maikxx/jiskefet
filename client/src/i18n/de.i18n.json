@@ -12,7 +12,9 @@
             "createTag": "Erstellen von Tags",
             "subType": "Untertyp",
             "runType": "Typ ausführen",
-            "generic": "Generisch"
+            "generic": "Generisch",
+            "remove": "Entfernen",
+            "cancel": "Stornieren"
         },
         "LogBar": {
             "addTitleForLog": "Fügen Sie einen Titel für dieses Protokoll"

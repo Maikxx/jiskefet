@@ -12,7 +12,9 @@
             "createTag": "إنشاء بطاقة",
             "subType": "النوع الفرعي",
             "runType": "شغل النوع",
-            "generic": "عام"
+            "generic": "عام",
+            "remove": "احذف",
+            "cancel": "إلغاء"
         },
         "LogBar": {
             "addTitleForLog": "إضافة a عنوان لـ سجل"

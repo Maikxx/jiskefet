@@ -12,7 +12,9 @@
             "createTag": "Etiket oluştur",
             "subType": "Alt türü",
             "runType": "Türü Çalıştır",
-            "generic": "Genel"
+            "generic": "Genel",
+            "remove": "Kaldırmak",
+            "cancel": "İptal"
         },
         "LogBar": {
             "addTitleForLog": "Bu günlük için bir başlık Ekle"

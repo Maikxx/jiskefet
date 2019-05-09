@@ -12,7 +12,9 @@
             "createTag": "Utworzyć nowy tag",
             "subType": "Podtyp",
             "runType": "Rodzaj wykonania",
-            "generic": "Porodowy"
+            "generic": "Porodowy",
+            "remove": "Usuwać",
+            "cancel": "Odwołanie"
         },
         "LogBar": {
             "addTitleForLog": "Dodaj nagłówek dla tego magazynu"

@@ -12,7 +12,9 @@
             "createTag": "Create tag",
             "subType": "Subtype",
             "runType": "Runtype",
-            "generic": "Generic"
+            "generic": "Generic",
+            "remove": "Remove",
+            "cancel": "Cancel"
         },
         "LogBar": {
             "addTitleForLog": "Add a title for this log"

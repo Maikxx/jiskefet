@@ -12,7 +12,9 @@
             "createTag": "Crea etichetta",
             "subType": "Sottotipo",
             "runType": "Tipo di esecuzione",
-            "generic": "Generico"
+            "generic": "Generico",
+            "remove": "Rimuovere",
+            "cancel": "Annullare"
         },
         "LogBar": {
             "addTitleForLog": "Aggiunge un titolo per questo registro"

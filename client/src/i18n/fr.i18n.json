@@ -12,7 +12,9 @@
             "createTag": "Créer une balise",
             "subType": "Sous-type",
             "runType": "Exécuter, tapez",
-            "generic": "Générique"
+            "generic": "Générique",
+            "remove": "Supprimer",
+            "cancel": "Annuler"
         },
         "LogBar": {
             "addTitleForLog": "Ajouter un titre à ce journal"

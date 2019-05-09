@@ -12,7 +12,9 @@
             "createTag": "टैग बनाएँ",
             "subType": "उप-प्रकार",
             "runType": "चलाएँ क़िस्म",
-            "generic": "जेनेरिक"
+            "generic": "जेनेरिक",
+            "remove": "हटाएँ",
+            "cancel": "रद्द करें"
         },
         "LogBar": {
             "addTitleForLog": "इस लॉग के लिए शीर्षक जोड़ें"
