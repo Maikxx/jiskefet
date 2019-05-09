@@ -33,8 +33,11 @@ export class TagList extends React.Component<Props> {
                                 className='tagName'
                             >
                                 {tag.name}
-                                {(isRemovable && onRemove) && (
-                                    <div onClick={() => onRemove(tag)}>Remove</div>
+                                {isRemovable && onRemove && (
+                                    <svg onClick={() => onRemove(tag)} xmlns='http://www.w3.org/2000/svg' className='remove' viewBox='0 0 512 512'>
+                                        <path className='remove-1' d='M256 0a256 256 0 1 0 0 512 256 256 0 0 0 0-512zm0 480a224 224 0 1 1 0-448 224 224 0 0 1 0 448z'/>
+                                        <path className='remove-1' d='M380 132a16 16 0 0 0-22 0L256 233 154 132a16 16 0 0 0-23 22h1l101 102-101 102a16 16 0 0 0 22 23v-1l102-101 102 101a16 16 0 0 0 22-22L279 256l101-102a16 16 0 0 0 0-22z'/>
+                                    </svg>
                                 )}
                                 {isEditable && (
                                     <svg xmlns='http://www.w3.org/2000/svg' className='edit' viewBox='0 0 411.7 412'>
