@@ -133,6 +133,7 @@ export class CreateTag extends React.Component<Props, State> {
 
             io.on('tag-created', this.onTagCreated)
             io.on('tag-edited', this.onTagEdited)
+            io.on('tag-removed', this.onTagRemoved)
         }
     }
 
@@ -150,6 +151,16 @@ export class CreateTag extends React.Component<Props, State> {
 
         if (tagToUpdateIndex > 0) {
             tags.splice(tagToUpdateIndex, 1, editedTag)
+            this.setState({ tags })
+        }
+    }
+
+    private onTagRemoved = (tagId: number) => {
+        const { tags } = this.state
+        const tagToRemoveIndex = tags.findIndex(tag => tag.id === tagId)
+
+        if (tagToRemoveIndex > 0) {
+            tags.splice(tagToRemoveIndex, 1)
             this.setState({ tags })
         }
     }
