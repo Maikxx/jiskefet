@@ -14,7 +14,9 @@
             "runType": "Typ ausführen",
             "generic": "Generisch",
             "remove": "Entfernen",
-            "cancel": "Stornieren"
+            "cancel": "Stornieren",
+            "removeTag": "Entfernen-tag",
+            "removeConfirmMessage": "Möchten Sie diesen Tag wirklich entfernen? Das Tag wird dauerhaft entfernt und kann nicht rückgängig gemacht werden."
         },
         "LogBar": {
             "addTitleForLog": "Fügen Sie einen Titel für dieses Protokoll"

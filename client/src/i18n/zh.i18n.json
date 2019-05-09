@@ -14,7 +14,9 @@
             "runType": "运行类型",
             "generic": "通用",
             "remove": "删除",
-            "cancel": "取消"
+            "cancel": "取消",
+            "removeTag": "删除标记",
+            "removeConfirmMessage": "您確定要刪除此標記嗎？該標記將被永久刪除，無法撤消。"
         },
         "LogBar": {
             "addTitleForLog": "添加此日志的标题"

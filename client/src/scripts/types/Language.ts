@@ -15,6 +15,8 @@ export interface Language {
             generic: string
             remove: string
             cancel: string
+            removeTag: string
+            removeConfirmMessage: string
         }
         LogBar: {
             addTitleForLog: string

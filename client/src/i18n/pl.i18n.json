@@ -14,7 +14,9 @@
             "runType": "Rodzaj wykonania",
             "generic": "Porodowy",
             "remove": "Usuwać",
-            "cancel": "Odwołanie"
+            "cancel": "Odwołanie",
+            "removeTag": "Usuń tag",
+            "removeConfirmMessage": "Czy na pewno chcesz usunąć ten tag? Tag zostanie trwale usunięty i nie można go cofnąć."
         },
         "LogBar": {
             "addTitleForLog": "Dodaj nagłówek dla tego magazynu"

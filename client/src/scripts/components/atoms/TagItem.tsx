@@ -61,7 +61,7 @@ export class TagItem extends React.Component<Props, State> {
                                                 <path className='accept-1' d='M218.47 94l-90.54 90.55-41.4-41.4a12.5 12.5 0 0 0-17.68 17.65l50.24 50.2a12.51 12.51 0 0 0 17.68 0l99.38-99.38A12.5 12.5 0 0 0 218.47 94z'/>
                                             </svg>
                                             <ModalBase
-                                                title={'Remove tag'}
+                                                title={language.App.Generic.removeTag}
                                                 firstButton={language.App.Generic.cancel}
                                                 secondButton={language.App.Generic.remove}
                                                 onAccept={() => this.onRemoveTag(tag)}
@@ -74,8 +74,7 @@ export class TagItem extends React.Component<Props, State> {
                                             >
                                                 <h2>{tag.name}</h2>
                                                 <p>
-                                                    Are you sure you want to remove this tag?
-                                                    The tag will be permanently removed and cannot be undone.
+                                                    {language.App.Generic.removeConfirmMessage}
                                                 </p>
                                             </ModalBase>
                                         </Row>

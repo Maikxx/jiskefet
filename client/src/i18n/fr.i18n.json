@@ -14,7 +14,9 @@
             "runType": "Exécuter, tapez",
             "generic": "Générique",
             "remove": "Supprimer",
-            "cancel": "Annuler"
+            "cancel": "Annuler",
+            "removeTag": "Supprimer l'étiquette",
+            "removeConfirmMessage": "Êtes-vous sûr de vouloir supprimer cette balise? La balise sera définitivement supprimée et ne pourra pas être annulée."
         },
         "LogBar": {
             "addTitleForLog": "Ajouter un titre à ce journal"

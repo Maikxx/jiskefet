@@ -14,7 +14,9 @@
             "runType": "Türü Çalıştır",
             "generic": "Genel",
             "remove": "Kaldırmak",
-            "cancel": "İptal"
+            "cancel": "İptal",
+            "removeTag": "Etiketi Kaldır",
+            "removeConfirmMessage": "Bu etiketi kaldırmak istediğinize emin misiniz? Etiket kalıcı olarak kaldırılacak ve geri alınamaz."
         },
         "LogBar": {
             "addTitleForLog": "Bu günlük için bir başlık Ekle"

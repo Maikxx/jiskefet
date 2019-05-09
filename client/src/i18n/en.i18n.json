@@ -14,7 +14,9 @@
             "runType": "Runtype",
             "generic": "Generic",
             "remove": "Remove",
-            "cancel": "Cancel"
+            "cancel": "Cancel",
+            "removeTag": "Remove tag",
+            "removeConfirmMessage": "Are you sure you want to remove this tag? The tag will be permanently removed and cannot be undone."
         },
         "LogBar": {
             "addTitleForLog": "Add a title for this log"

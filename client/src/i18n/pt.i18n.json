@@ -14,7 +14,9 @@
             "runType": "Tipo de execução",
             "generic": "Generico",
             "remove": "Remover",
-            "cancel": "Cancelar"
+            "cancel": "Cancelar",
+            "removeTag": "Remover a marca",
+            "removeConfirmMessage": "Tem certeza de que deseja remover esta tag? A tag será removida permanentemente e não poderá ser desfeita."
         },
         "LogBar": {
             "addTitleForLog": "Adicionar um título para este registo"

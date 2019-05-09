@@ -14,7 +14,9 @@
             "runType": "Tipo di esecuzione",
             "generic": "Generico",
             "remove": "Rimuovere",
-            "cancel": "Annullare"
+            "cancel": "Annullare",
+            "removeTag": "Rimuovi etichetta",
+            "removeConfirmMessage": "Sei sicuro di voler rimuovere questo tag? Il tag verrà rimosso definitivamente e non potrà essere annullato."
         },
         "LogBar": {
             "addTitleForLog": "Aggiunge un titolo per questo registro"
