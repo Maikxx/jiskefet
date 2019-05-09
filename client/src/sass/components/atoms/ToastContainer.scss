@@ -1,0 +1,28 @@
+.ToastContainer {
+    &__toast {
+        border-radius: .35em!important;
+        color: #1C2C38!important;
+        padding: 1em!important;
+        font-weight: bold!important;
+        transition: background-color .2s ease;
+
+        &.Toastify__toast--default {
+            background-color: #E88626!important;
+
+            &:hover,
+            &:focus {
+                background-color: #FFAC5A!important;
+            }
+        }
+
+        &.Toastify__toast--error {
+            background-color: #E6605D!important;
+            color: #FFFFFF!important;
+
+            &:hover,
+            &:focus {
+                background-color: darken(#E6605D, 5%)!important;
+            }
+        }
+    }
+}

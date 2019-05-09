@@ -1,4 +1,5 @@
 import { getCurrentWindowOrigin } from './url'
+import { toast } from 'react-toastify'
 
 export async function getTags() {
     const url = `${getCurrentWindowOrigin()}/get-tags`
@@ -11,6 +12,7 @@ export async function getTags() {
         const response = await fetch(url, fetchVariables)
         return response.json()
     } catch (error) {
+        toast.error('There was an error getting existing tags from the server!')
         throw new Error(error.message)
     }
 }
@@ -28,11 +30,13 @@ export async function createNewTag(name: string) {
         const data = await response.json()
 
         if (!data.success) {
+            toast.error(data.error)
             throw new Error(data.error)
         } else {
-            console.info('Successfully added a tag!')
+            toast(`Successfully created tag: ${name}!`)
         }
     } catch (error) {
+        toast.error(error.message)
         throw new Error(error.message)
     }
 }
@@ -51,15 +55,19 @@ export async function updateTagName(id: number, name: string) {
             const data = await response.json()
 
             if (!data.success) {
+                toast.error(data.error)
                 throw new Error(data.error)
             } else {
-                console.info('Successfully edited a tag!')
+                toast(`Successfully edited tag: ${name}!`)
             }
         } catch (error) {
+            toast.error(error.message)
             throw new Error(error.message)
         }
     } else {
-        throw new Error('You have not passed correct variables to the update fetcher.')
+        const errorMessage = `You have not passed correct variables to the update fetcher.`
+        toast.error(errorMessage)
+        throw new Error(errorMessage)
     }
 }
 
@@ -77,14 +85,19 @@ export async function removeTag(id: number) {
             const data = await response.json()
 
             if (!data.success) {
+                toast.error(data.error)
                 throw new Error(data.error)
             } else {
+                toast('Successfully removed a tag!')
                 console.info('Successfully removed a tag!')
             }
         } catch (error) {
+            toast.error(error.message)
             throw new Error(error.message)
         }
     } else {
-        throw new Error('You have not passed correct variables to the remove fetcher.')
+        const errorMessage = `You have not passed correct variables to the remove fetcher.`
+        toast.error(errorMessage)
+        throw new Error(errorMessage)
     }
 }

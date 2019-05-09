@@ -9,6 +9,8 @@ import { Button } from './components/atoms/Button'
 import { Language } from './types/Language'
 import { LanguageContext, LANGUAGE_OPTIONS, LANGUAGE_MAP } from './components/LanguageProvider'
 import { Selector } from './components/atoms/Selector'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 interface State {
     addedTags: Tag[]
@@ -30,11 +32,13 @@ export class App extends React.Component<{}, State> {
                     <h1 className={`Capitalize`}>
                         {language.App.Generic.createNewLog}
                     </h1>
+
                     <Selector
                         title={language.App.Generic.chooseALanguage}
                         options={LANGUAGE_OPTIONS}
                         onChange={this.onChangeLanguage}
                     />
+
                     <label id='switch' className={`Capitalize`}>
                         {language.App.Generic.darkMode}
                         <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 414.34 512'>
@@ -56,13 +60,32 @@ export class App extends React.Component<{}, State> {
                         <input id='toggle' type='checkbox' onClick={this.switchLightingMode}/>
                     </label>
                 </Row>
-                <LogBar addedTags={addedTags} onRemove={this.onRemoveTag}/>
+
+                <LogBar
+                    addedTags={addedTags}
+                    onRemove={this.onRemoveTag}
+                />
+
                 <Wysiwig />
-                <CreateTag addTag={this.onTagAdded} onRemoveTag={this.onTagRemoved}/>
+
+                <CreateTag
+                    addTag={this.onTagAdded}
+                    onRemoveTag={this.onTagRemoved}
+                />
+
                 <Attachment />
+
                 <Button className='CreateLog Capitalize' type='submit'>
                     {language.App.Generic.addNewLog}
                 </Button>
+                <ToastContainer
+                    className={`ToastContainer`}
+                    toastClassName={`ToastContainer__toast`}
+                    closeButton={false}
+                    autoClose={2000}
+                    hideProgressBar={true}
+                    position={'bottom-right'}
+                />
             </LanguageContext.Provider>
         )
     }

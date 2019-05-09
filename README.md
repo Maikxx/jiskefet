@@ -64,10 +64,10 @@ Both the clients `src/sass` and `src/scripts` folders should have the following 
 * [ ] Drag & drop attachment (**NOT IN V1**)
 * [ ] Documentation
 * [ ] Enable typing markdown directly
-* [ ] Error toasts
 * [ ] Refactor client-side code into components (**NOT IN V1**)
 * [ ] Tag restriction - only some people can create (**NOT IN V1**)
 * [X] Editing tags
+* [X] Error toasts
 * [X] Remove tag confirm modal
 * [X] Restrict tags by name duplicated
 
