@@ -132,6 +132,7 @@ export class CreateTag extends React.Component<Props, State> {
             console.info('Socket connection established')
 
             io.on('tag-created', this.onTagCreated)
+            io.on('tag-edited', this.onTagEdited)
         }
     }
 
@@ -140,6 +141,16 @@ export class CreateTag extends React.Component<Props, State> {
 
         if (!tags.find(tag => tag.id === newTag.id)) {
             this.setState({ tags: [ ...tags, newTag ] })
+        }
+    }
+
+    private onTagEdited = (editedTag: Tag) => {
+        const { tags } = this.state
+        const tagToUpdateIndex = tags.findIndex(tag => tag.id === editedTag.id)
+
+        if (tagToUpdateIndex > 0) {
+            tags.splice(tagToUpdateIndex, 1, editedTag)
+            this.setState({ tags })
         }
     }
 

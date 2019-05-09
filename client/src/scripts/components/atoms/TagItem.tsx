@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Tag } from '../../types/Database'
 import { Button } from '../atoms/Button'
 import { Row } from './Row'
+import { updateTagName } from '../../utils/fetchers'
 
 interface Props {
     addTag?: (tag: Tag) => void
@@ -16,10 +17,11 @@ interface State {
 }
 
 export class TagItem extends React.Component<Props, State> {
-
     public state: State = {
         isBeingEdited: false,
     }
+
+    private updateTagNameInputRef = React.createRef<HTMLInputElement>()
 
     public render() {
         const { tag, isEditable, isRemovable, onRemove } = this.props
@@ -47,9 +49,9 @@ export class TagItem extends React.Component<Props, State> {
                     {isEditable && isBeingEdited && (
                         <div className='background'>
                             <Row spaceBetween={true} >
-                                <input type='text' className='isBeingEdited' defaultValue={tag.name} />
+                                <input type='text' className='isBeingEdited' defaultValue={tag.name} ref={this.updateTagNameInputRef}/>
                                 <Row>
-                                    <svg className='accept' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 305 305'>
+                                    <svg className='accept' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 305 305' onClick={() => this.onAcceptNameChange(tag)}>
                                         <path className='accept-1' d='M152.5 0C68.41 0 0 68.41 0 152.5S68.41 305 152.5 305 305 236.59 305 152.5 236.59 0 152.5 0zm0 280A127.5 127.5 0 1 1 280 152.5 127.65 127.65 0 0 1 152.5 280z'/>
                                         <path className='accept-1' d='M218.47 94l-90.54 90.55-41.4-41.4a12.5 12.5 0 0 0-17.68 17.65l50.24 50.2a12.51 12.51 0 0 0 17.68 0l99.38-99.38A12.5 12.5 0 0 0 218.47 94z'/>
                                     </svg>
@@ -77,5 +79,21 @@ export class TagItem extends React.Component<Props, State> {
 
     private editTag = () => {
         this.setState({ isBeingEdited: !this.state.isBeingEdited })
+    }
+
+    private onAcceptNameChange = async (tag: Tag) => {
+        const updateTagNameInput = this.updateTagNameInputRef.current
+
+        if (updateTagNameInput && updateTagNameInput.value && updateTagNameInput.value.length > 0) {
+            if (tag.name.toLowerCase() !== updateTagNameInput.value.toLowerCase()) {
+                const updatedTagName = updateTagNameInput.value
+                await updateTagName(tag.id, updatedTagName)
+                this.setState({ isBeingEdited: false })
+            } else {
+                this.setState({ isBeingEdited: false })
+            }
+        } else {
+            this.setState({ isBeingEdited: false })
+        }
     }
 }

@@ -30,7 +30,11 @@ export function postEditTagRoute(sockets: SocketIO.Server) {
             const { tag, isUpdated } = await updateTagInDatabase(tagId, updatedTagName)
 
             if (isUpdated) {
-                sockets.emit('tag-updated', tag)
+                sockets.emit('tag-edited', tag)
+
+                response.status(200).json({
+                    success: true,
+                })
             } else {
                 response.status(409).json({
                     success: false,

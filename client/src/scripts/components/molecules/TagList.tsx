@@ -24,7 +24,14 @@ export class TagList extends React.Component<Props> {
                 )}
                 <ul>
                     {tags.map((tag, key) => (
-                        <TagItem addTag={addTag} tag={tag} key={key} isEditable={isEditable} isRemovable={isRemovable} onRemove={onRemove}/>
+                        <TagItem
+                            addTag={addTag}
+                            tag={tag}
+                            key={key}
+                            isEditable={isEditable}
+                            isRemovable={isRemovable}
+                            onRemove={onRemove}
+                        />
                     ))}
                 </ul>
             </div>

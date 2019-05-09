@@ -52,7 +52,7 @@ Both the clients `src/sass` and `src/scripts` folders should have the following 
 * [ ] Animations
 * [ ] Autospelling check for tag names
 * [ ] Drag & drop attachment
-* [ ] Editing tags
+* [X] Editing tags
 * [ ] Enable typing markdown directly
 * [ ] Error toasts
 * [ ] Refactor client-side code into components
