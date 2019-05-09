@@ -3,7 +3,7 @@ import { Tag } from '../../types/Database'
 import { Button } from '../atoms/Button'
 import { Row } from './Row'
 import { updateTagName } from '../../utils/fetchers'
-import { ModalBase } from './ModalBase'
+import { ModalBase } from '../organisms/ModalBase'
 
 interface Props {
     addTag?: (tag: Tag) => void

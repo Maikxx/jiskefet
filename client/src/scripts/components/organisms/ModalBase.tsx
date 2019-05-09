@@ -1,8 +1,8 @@
 import * as React from 'react'
 import Modal from 'react-modal'
-import { ModalHeader } from './ModalHeader'
-import { ModalFooter } from './ModalFooter'
-import { ModalBody } from './ModalBody'
+import { ModalHeader } from '../atoms/ModalHeader'
+import { ModalFooter } from '../atoms/ModalFooter'
+import { ModalBody } from '../atoms/ModalBody'
 
 interface Props {
     renderButton: (openModal: () => void) => JSX.Element
