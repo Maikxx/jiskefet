@@ -9,16 +9,16 @@ export function postAddTagRoute(sockets: SocketIO.Server) {
         try {
             const newlyAddedTag = await addNewTagToDatabase(tagName)
             sockets.emit('tag-created', newlyAddedTag)
+
+            response.status(200).json({
+                success: true,
+            })
         } catch (error) {
-            response.status(409).json({
+            return response.status(409).json({
                 success: false,
                 error: error.message,
             })
         }
-
-        response.status(200).json({
-            success: true,
-        })
     }
 }
 
@@ -32,11 +32,11 @@ export function postEditTagRoute(sockets: SocketIO.Server) {
             if (isUpdated) {
                 sockets.emit('tag-edited', tag)
 
-                response.status(200).json({
+                return response.status(200).json({
                     success: true,
                 })
             } else {
-                response.status(409).json({
+                return response.status(409).json({
                     success: false,
                     error: `Updating tag ${tagId} failed!`,
                 })
