@@ -49,13 +49,15 @@ Both the clients `src/sass` and `src/scripts` folders should have the following 
 
 ## Process
 
+* [ ] Animations
 * [ ] Autospelling check for tag names
 * [ ] Drag & drop attachment
 * [ ] Editing tags
-* [ ] Error toasts
 * [ ] Enable typing markdown directly
-* [X] Restrict tags by name duplicated
+* [ ] Error toasts
+* [ ] Remove tag confirm modal
 * [ ] Tag restriction - only some people can create
+* [X] Restrict tags by name duplicated
 
 ## Issues
 
