@@ -82,7 +82,7 @@ export class App extends React.Component<{}, State> {
                     className={`ToastContainer`}
                     toastClassName={`ToastContainer__toast`}
                     closeButton={false}
-                    autoClose={2000}
+                    autoClose={2500}
                     hideProgressBar={true}
                     position={'bottom-right'}
                 />

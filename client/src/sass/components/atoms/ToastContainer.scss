@@ -1,7 +1,8 @@
 .ToastContainer {
     &__toast {
+        font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif!important;
         position: fixed!important;
-        bottom: 2%!important;
+        bottom: 0!important;
         right: 2%!important;
         border-radius: .35em!important;
         color: #1C2C38!important;

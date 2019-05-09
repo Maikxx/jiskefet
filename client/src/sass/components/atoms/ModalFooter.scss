@@ -12,6 +12,7 @@
         font-weight: bold;
         border: none;
         border-radius: .35em;
+        transition: all .2s ease;
     }
 
     .firstButton {
@@ -21,5 +22,15 @@
 
     .secondButton {
         background-color: #E6605D;
+    }
+
+    .firstButton:hover,
+    .firstButton:focus {
+        background-color: #FFAC5A;
+    }
+
+    .secondButton:hover,
+    .secondButton:focus, {
+        background-color: darken(#E6605D, 5%);
     }
 }
