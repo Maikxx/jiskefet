@@ -4,6 +4,7 @@ dist/
 .env
 .cache/
 server/public
+yarn-error.log
 
 # Misc
 .DS_Store

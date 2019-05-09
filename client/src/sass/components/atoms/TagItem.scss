@@ -63,5 +63,19 @@
             fill: #1c2c38;
         }
     }
+
+    .remove:hover {
+
+        .remove-1{
+            fill: #ffffff;
+        }
+    }
+}
+
+body.light {
+    
+    .isBeingEdited {
+        color: #ffffff;
+    }
 }
 
