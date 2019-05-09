@@ -1,0 +1,67 @@
+.TagItem {
+    height: 100%;
+
+    .background {
+        margin: -.65em;
+        border-radius: .35em;
+        background-color: #1C2C38;
+    }
+    .isBeingEdited {
+        padding: .20em;
+        padding-left: .5em;
+        margin: 0;
+        margin-left: .5em;
+        background-color: transparent;
+    }
+
+    .iconWrapper {
+        display: flex;
+        flex-direction: row;
+    }
+    .trash {
+        min-width: 25px;
+        max-width: 25px;
+        margin-left: .5em;
+        margin-right: .5em;
+        padding: .5em .2em;
+
+        .trash-1{
+            fill:#e6605d
+        }
+    }
+
+    .accept {
+        min-width: 25px;
+        max-width: 25px;
+        padding: .5em .2em;
+
+        .accept-1{
+            fill:#fff
+        }
+    }
+
+    .trash:hover {
+
+        .trash-1{
+            fill:#FFAC5A;
+        }
+    }
+
+    .accept:hover {
+
+        .accept-1{
+            fill:#FFAC5A;
+        }
+    }
+
+    .remove {
+        max-width: 15px;
+        min-width: 15px;
+        margin-left: .75em;
+
+        .remove-1{
+            fill: #1c2c38;
+        }
+    }
+}
+

@@ -17,7 +17,7 @@ export class LogBar extends React.Component<Props> {
         return (
             <LanguageContext.Consumer>
                 {(language: Language) => (
-                    <Row column={true}>
+                    <Row wrap={true}>
                         <div className='LogBar'>
                             <label>
                                 <input type='text' placeholder={language.App.LogBar.addTitleForLog}/>
