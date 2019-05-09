@@ -164,12 +164,13 @@ function name(newChar, lastChar, lastSixChars, e, secondLast) {
 
     setTimeout(function () {
         var textField = document.getElementsByClassName('editor')[0]
-        var checkTag = textField.innerHTML.slice(-8)
+        var checkTag = String(textField.innerHTML).slice(-8)
+
         var rx1 = /(<\/[\w\d]*>)/g
         let get = checkTag.replace(rx1, (...x) => {
             checkTag = x[0]
         });
-
+        console.log(checkTag);
 
 
         if (specialChars.includes(newChar)) {
@@ -178,13 +179,13 @@ function name(newChar, lastChar, lastSixChars, e, secondLast) {
             closingTagFix = closingTagFix.slice(0, 1)
             var duplicate = (newChar === lastChar);
             var caretNum = textField.innerText.length
-
+            // var typedHeading;
 
             if ((newChar === '*' || newChar === '_') && (duplicate === false) && (checkTag.includes('</') === false)) {
                 console.log('italic');
-                console.log('em toegevoegd');
                 textField.innerHTML = textField.innerHTML.slice(0, -1) + `<em>${newChar}</em>`
                 placeCaretAtEnd(textField);
+
             }
             if ((newChar === '*' || newChar === '_') && (duplicate === true) && (checkTag.includes('</') === false)) {
                 console.log('bold');
@@ -203,21 +204,21 @@ function name(newChar, lastChar, lastSixChars, e, secondLast) {
             if ((newChar === '[') && (lastChar === '!')) {
                 console.log('image');
             }
-            if (newChar === '#') {
+            if (((lastChar !== '#') && (newChar === '#')) || ((lastChar = '#') && (newChar === '#')) && (checkTag.includes('</') === false)) {
                 var countHeadingLvl = String(lastSixChars.replace(/[^#]/g, "").length);
-                console.log('h' + countHeadingLvl);
+                var typedHeading = 'h' + countHeadingLvl;
+                console.log(typedHeading);
             }
         }
 
-        if ((checkTag.includes('</') && (specialChars.includes(lastChar) && (closingTagFix !== '>') && (e.keyCode !== 32)))) {
-
+        if (((checkTag === '</em>') && (lastChar !== '*') && (newChar === '*') && (e.keyCode !== 32))) {
+            console.log('closingTag');
             var FirstInnerHtmlValue = String(textField.innerHTML).slice(0, -(checkTag.length + 1))
             console.log(`first = ${FirstInnerHtmlValue}`);
             var LastInnerHtmlValue = String(textField.innerHTML).slice(-(checkTag.length))
             console.log(`last = ${LastInnerHtmlValue}`);
-            textField.innerHTML = FirstInnerHtmlValue + LastInnerHtmlValue + newChar;
+            textField.innerHTML = `${FirstInnerHtmlValue}${LastInnerHtmlValue}${newChar}`
             placeCaretAtEnd(textField);
-
         }
 
         if (newChar === 'Backspace') {
@@ -226,11 +227,7 @@ function name(newChar, lastChar, lastSixChars, e, secondLast) {
     }, 0)
 }
 
-
-
-
 function placeCaretAtEnd(el) {
-    console.log(el);
     el.focus();
     if (typeof window.getSelection != "undefined" &&
         typeof document.createRange != "undefined") {
