@@ -10,12 +10,12 @@ export async function getTagsRoute (request: express.Request, response: express.
     try {
         const data = await getDataFromDatabase()
 
-        response.status(200).json({
+        return response.status(200).json({
             success: true,
             data: data.tags,
         })
     } catch (error) {
-        response.status(500).json({
+        return response.status(500).json({
             success: false,
             error: error.message,
         })

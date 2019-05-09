@@ -10,7 +10,7 @@ export function postAddTagRoute(sockets: SocketIO.Server) {
             const newlyAddedTag = await addNewTagToDatabase(tagName)
             sockets.emit('tag-created', newlyAddedTag)
 
-            response.status(200).json({
+            return response.status(200).json({
                 success: true,
             })
         } catch (error) {
@@ -42,7 +42,7 @@ export function postEditTagRoute(sockets: SocketIO.Server) {
                 })
             }
         } catch (error) {
-            response.status(500).json({
+            return response.status(500).json({
                 success: false,
                 error: error.message,
             })
@@ -60,17 +60,17 @@ export function postRemoveTagRoute(sockets: SocketIO.Server) {
             if (isRemoved) {
                 sockets.emit('tag-removed', tagId)
 
-                response.status(200).json({
+                return response.status(200).json({
                     success: true,
                 })
             } else {
-                response.status(409).json({
+                return response.status(409).json({
                     success: false,
                     error: message,
                 })
             }
         } catch (error) {
-            response.status(500).json({
+            return response.status(500).json({
                 success: false,
                 error: error.message,
             })
