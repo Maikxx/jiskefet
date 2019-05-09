@@ -22,9 +22,7 @@ export async function getDataFromDatabase() {
 
 export async function addNewTagToDatabase(tagName: string) {
     try {
-        const data = await getDataFromDatabase()
-
-        const { tags, types } = data
+        const { tags, types } = await getDataFromDatabase()
         const lastTag = tags[tags.length - 1]
         const tagNameExists = tags.find(tag => tag.name.toLowerCase() === tagName.toLowerCase())
 
@@ -57,8 +55,7 @@ export async function addNewTagToDatabase(tagName: string) {
 
 export async function updateTagInDatabase(tagId: number, updatedTagName: string) {
     try {
-        const data = await getDataFromDatabase()
-        const { tags, types } = data
+        const { tags, types } = await getDataFromDatabase()
         const tagMatchIndex = tags.findIndex(tag => tag.id === tagId)
 
         if (tagMatchIndex > 0) {
@@ -89,6 +86,34 @@ export async function updateTagInDatabase(tagId: number, updatedTagName: string)
             }
         } else {
             throw new Error('The tag passed to the server does not exist in the database.')
+        }
+    } catch (error) {
+        throw new Error(error.message)
+    }
+}
+
+export async function removeTagFromDatabase(tagId: number) {
+    try {
+        const { tags, types } = await getDataFromDatabase()
+        const tagMatchIndex = tags.findIndex(tag => tag.id === tagId)
+
+        if (tagMatchIndex > 0) {
+            tags.splice(tagMatchIndex, 1)
+
+            await writeFile(databasePath, JSON.stringify({
+                types,
+                tags,
+            }))
+
+            return {
+                isRemoved: true,
+                message: `Tag ${tagId} has been removed from the database.`,
+            }
+        } else {
+            return {
+                isRemoved: false,
+                message: 'The tag could not be found in the database! Removing has failed!',
+            }
         }
     } catch (error) {
         throw new Error(error.message)
