@@ -54,3 +54,43 @@ export async function addNewTagToDatabase(tagName: string) {
         throw new Error(error.message)
     }
 }
+
+export async function updateTagInDatabase(tagId: number, updatedTagName: string) {
+    try {
+        const data = await getDataFromDatabase()
+        const { tags, types } = data
+        const tagMatchIndex = tags.findIndex(tag => tag.id === tagId)
+
+        if (tagMatchIndex > 0) {
+            const tagMatch = tags[tagMatchIndex]
+
+            if (tagMatch.name.toLowerCase() !== updatedTagName.toLowerCase()) {
+                const updatedTag = {
+                    ...tagMatch,
+                    name: updatedTagName,
+                }
+
+                tags.splice(tagMatchIndex, 0, updatedTag)
+
+                await writeFile(databasePath, JSON.stringify({
+                    types,
+                    tags,
+                }))
+
+                return {
+                    tag: updatedTag,
+                    isUpdated: true,
+                }
+            } else {
+                return {
+                    tag: tagMatch,
+                    isUpdated: false,
+                }
+            }
+        } else {
+            throw new Error('The tag passed to the server does not exist in the database.')
+        }
+    } catch (error) {
+        throw new Error(error.message)
+    }
+}

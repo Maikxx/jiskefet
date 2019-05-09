@@ -21,7 +21,7 @@ This demo is a collaboration between [Chelsea Doeleman](https://github.com/Chels
 * Navigate into the directory: `cd jiskefet`
 * Install dependencies: `yarn` or `npm install`
 * Start the client with: `yarn start-client` or `npm run start-client`
-* Build the server with `yarn build-server` or `npm run build-server`
+* Start the server with `yarn start-server` or `npm run start-server`
 
 You may have perform the following steps if you get errors running the commands above:
 
