@@ -1,5 +1,6 @@
 import express from 'express'
 import { addNewTagToDatabase, updateTagInDatabase } from '../www/database'
+import SocketIO from 'socket.io'
 
 export function postAddTagRoute(sockets: SocketIO.Server) {
     return async function(request: express.Request, response: express.Response) {
