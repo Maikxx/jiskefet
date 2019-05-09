@@ -1,0 +1,19 @@
+.ModalHeader {
+    background-color:#324858;
+    padding: 0 1em;
+    border-top-left-radius: .5em;
+    border-top-right-radius: .5em;
+
+    button {
+        padding: .5em;
+        color: #e2ecf6;
+        font-weight: bold;
+        background-color: transparent;
+        border: none;
+        font-size: 2em;
+    }
+
+    button:hover {
+        color: #FFAC5A;
+    }
+}

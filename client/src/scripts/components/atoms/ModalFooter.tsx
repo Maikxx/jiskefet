@@ -14,10 +14,10 @@ export class ModalFooter extends React.Component<Props> {
         const { firstButton, secondButton, onClose, onAccept } = this.props
 
         return (
-            <footer>
+            <footer className={`ModalFooter`}>
                 <Row spaceBetween={true}>
-                    <Button onClick={onClose}>{firstButton}</Button>
-                    <Button onClick={onAccept}>{secondButton}</Button>
+                    <Button className='firstButton' onClick={onClose}>{firstButton}</Button>
+                    <Button className='secondButton' onClick={onAccept}>{secondButton}</Button>
                 </Row>
             </footer>
         )

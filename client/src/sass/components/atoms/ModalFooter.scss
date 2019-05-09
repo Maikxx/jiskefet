@@ -1,0 +1,25 @@
+.ModalFooter {
+    background-color:#324858;
+    padding: 1em 1em;
+    border-bottom-left-radius: .5em;
+    border-bottom-right-radius: .5em;
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+        padding: 1em;
+        color: #1C2C38;
+        font-weight: bold;
+        border: none;
+        border-radius: .35em;
+    }
+
+    .firstButton {
+        background-color: #E88626;
+        margin-right: 1em;
+    }
+
+    .secondButton {
+        background-color: #E6605D;
+    }
+}

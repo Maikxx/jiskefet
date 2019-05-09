@@ -30,6 +30,7 @@ export class ModalBase extends React.Component<Props, State> {
             <React.Fragment>
                 {renderButton(this.openModal)}
                 <Modal
+                    overlayClassName='Overlay'
                     isOpen={this.state.modalIsOpen}
                     onRequestClose={this.closeModal}
                     className={`BaseModal`}

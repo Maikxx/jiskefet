@@ -13,7 +13,7 @@ export class ModalHeader extends React.Component<Props> {
         const { title, onClose } = this.props
 
         return (
-            <header>
+            <header className={`ModalHeader`}>
                 <Row spaceBetween={true}>
                     <h1 className={`Capitalise`}>{title}</h1>
                     <Button onClick={onClose}>X</Button>

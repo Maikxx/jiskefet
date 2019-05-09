@@ -1,14 +1,22 @@
 // Here you can add import links to your newly created SASS component.
 // Example: @import './components/atoms/Link.scss';
 
-@import './components/atoms/Row.scss';
+// ORGANISMS
+@import './components/organisms/Wysiwyg.scss';
+@import './components/organisms/Attachment.scss';
+@import './components/organisms/LogBar.scss';
+@import './components/organisms/ModalBase.scss';
+
+// MOLECULES
 @import './components/molecules/WysiwygToolbar.scss';
 @import './components/molecules/CreateTags.scss';
 @import './components/molecules/WysiwygToolbarButton.scss';
 @import './components/molecules/WysiwygForm.scss';
-@import './components/organisms/Wysiwyg.scss';
-@import './components/organisms/Attachment.scss';
-@import './components/organisms/LogBar.scss';
+
+// ATOMS
+@import './components/atoms/Row.scss';
 @import './components/atoms/TagList.scss';
+@import './components/atoms/ModalHeader.scss';
 @import './components/atoms/TagItem.scss';
 @import './components/atoms/Selector.scss';
+@import './components/atoms/ModalFooter.scss';
