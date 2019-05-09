@@ -55,6 +55,7 @@ Both the clients `src/sass` and `src/scripts` folders should have the following 
 * [ ] Editing tags
 * [ ] Enable typing markdown directly
 * [ ] Error toasts
+* [ ] Refactor client-side code into components
 * [ ] Remove tag confirm modal
 * [ ] Tag restriction - only some people can create
 * [X] Restrict tags by name duplicated
