@@ -28,7 +28,6 @@ export class TagList extends React.Component<Props> {
                             <Button
                                 type={`button`}
                                 onClick={() => this.onAddTag(tag)}
-                                key={tag.id}
                                 data-tag-id={tag.id}
                                 className='tagName'
                             >
