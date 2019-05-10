@@ -162,8 +162,7 @@ function name(newChar, lastChar, lastSixChars, e, secondLast) {
 
     setTimeout(function () {
         var textField = document.getElementsByClassName('editor')[0]
-        var checkTag = String(textField.innerHTML).slice(-8)
-
+        var checkTag = String(textField.innerHTML).slice(-12)
         var rx1 = /(<\/[\w\d]*>)/g
         let get = checkTag.replace(rx1, (...x) => {
             checkTag = x[0]
@@ -193,8 +192,10 @@ function name(newChar, lastChar, lastSixChars, e, secondLast) {
             textField.innerHTML = textField.innerHTML.slice(0, -1) + `<b>${newChar}</b>`
             placeCaretAtEnd(textField);
         }
-        if ((newChar === '~') && (duplicate === true)) {
+        if ((lastChar === '~') && (lastChar === secondLast) && (checkTag.includes('</') === false)) {
             console.log('strikethrough');
+            textField.innerHTML = textField.innerHTML.slice(0, -1) + `<strike>${newChar}</strike>`
+            placeCaretAtEnd(textField);
         }
         if ((newChar === '+' || newChar === '-') && (lastChar === '/')) {
             console.log('bullitpoint');
@@ -229,13 +230,15 @@ function name(newChar, lastChar, lastSixChars, e, secondLast) {
             textField.innerHTML = FirstInnerHtmlValue + LastInnerHtmlValue + newChar;
             placeCaretAtEnd(textField);
         }
-        if ((checkTag.includes('</strike>') && ((specialChars.includes(newChar)) && (specialChars.includes(lastChar)) && (closingTagFix !== '>') && (e.keyCode !== 32)))) {
-            console.log('closing strikeThrough');
+        if (((checkTag === '</strike>') && (newChar === '~') && (e.keyCode !== 32))) {
+            console.log('closing bold');
+            console.log(lastChar);
             var FirstInnerHtmlValue = String(textField.innerHTML).slice(0, -(checkTag.length + 1))
             var LastInnerHtmlValue = String(textField.innerHTML).slice(-(checkTag.length))
             textField.innerHTML = FirstInnerHtmlValue + LastInnerHtmlValue + newChar;
             placeCaretAtEnd(textField);
         }
+
 
         if (newChar === 'Backspace') {
             console.log('backspace');
