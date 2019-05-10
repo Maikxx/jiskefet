@@ -76,6 +76,7 @@ body {
     overflow-x: hidden;
     color: #E2ECF5;
     background-color: #1C2C38;
+    transition: background-color .5s ease;
     font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 
     &.light {
