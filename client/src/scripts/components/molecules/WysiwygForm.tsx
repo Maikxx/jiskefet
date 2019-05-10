@@ -29,7 +29,7 @@ export class WysiwygForm extends React.Component<Props> {
             <LanguageContext.Consumer>
                 {(language: Language) => (
                     <form className={`WysiwygForm ${className ? className : ''}`} onSubmit={this.onSubmit}>
-                        <fieldset>
+                        <fieldset onClick={() => (this.editorRef.current as HTMLElement).focus()}>
                             <div
                                 ref={this.editorRef}
                                 contentEditable={true}
