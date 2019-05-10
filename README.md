@@ -4,6 +4,8 @@ This project aims to create a working demo for an enhancement of the ALICE loggi
 
 This demo is a collaboration between [Chelsea Doeleman](https://github.com/ChelseaDoeleman), [Robin Stut](https://github.com/RobinStut) and [Maikel van Veen](https://github.com/Maikxx).
 
+Please mind, this is a demo, and not everything is fully functional. For example, the file input and the submission of the log don't work. The wysiwyg might be a little bit buggy still.
+
 ![App](./docs/assets/app.png)
 
 ## Table of contents
