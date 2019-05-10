@@ -15,6 +15,7 @@ This demo is a collaboration between [Chelsea Doeleman](https://github.com/Chels
 * [Design](#Design)
 * [Process](#Process)
 * [Issues](#Issues)
+* [Resources](#Resources)
 
 ## Installation
 
@@ -123,6 +124,21 @@ For example the **trashcan** button when editing a **generic tag**. Obviously th
 * Horizontal line styling
 * Blockquote styling
 * Refactor `collapsible` into it's own component
+
+## Resources
+
+* Icons
+    * [Lamp](https://www.flaticon.com/free-icon/lamp_1437117)
+    * [Docs](https://www.flaticon.com/free-icon/docs_1295567)
+    * [Trashcan](https://www.flaticon.com/free-icon/garbage_126468)
+    * [Confirm](https://www.flaticon.com/free-icon/confirm_101022)
+    * [Edit](https://www.flaticon.com/free-icon/pen_1159725)
+    * [Remove](https://www.flaticon.com/free-icon/remove_1103478)
+* Colors
+    * [MyColorSpace](https://mycolor.space/?hex=%231C2C38&sub=1)
+* Modal
+    * [React-modal](https://github.com/reactjs/react-modal)
+    * [@types/react-modal](https://www.npmjs.com/package/@types/react-modal)
 
 ## License
 
