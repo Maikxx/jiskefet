@@ -8,12 +8,12 @@
         background-color: #E88626;
         border: none;
         font-weight: bold;
+        transition: all .2s ease;
     }
 
     button:hover,
     button:focus {
         background-color: #FFAC5A;
-        transition: all .2s ease;
     }
 
     input {
@@ -56,8 +56,13 @@
     .plus {
         width: 20px;
         margin-right: 1em;
+        transition: opacity .2s ease;
 
         .row-1,.row-2{fill:  none;stroke:#e2ecf6;stroke-miterlimit:10;stroke-width:2px;}.row-2{stroke-linecap:round;}
+        
+        .vertical {
+            opacity: 0;
+        }
     }
 
 }

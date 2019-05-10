@@ -64,7 +64,7 @@ export class CreateTag extends React.Component<Props, State> {
                         >
                             <svg xmlns='http://www.w3.org/2000/svg' className='plus' viewBox='0 0 72.59 72.59'>
                                 <circle className='row-1' cx='36.29' cy='36.29' r='35.29'/>
-                                <path className='row-2' d='M36.49,19.43q-.09,16.86-.2,33.73'/>
+                                <path className={`row-2${open ? ' vertical' : ''}`} d='M36.49,19.43q-.09,16.86-.2,33.73'/>
                                 <path className='row-2' d='M19.43,36.2l33.73.19'/>
                             </svg>
                             {language.App.Generic.addTags}
