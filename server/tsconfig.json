@@ -23,10 +23,9 @@
         "target": "es5"
     },
     "include": [
-        "server/**/*.ts",
+        "./**/*.ts",
     ],
     "exclude": [
-        "**/*/node_modules",
-        "./server/dist"
+        "**/*/node_modules"
     ]
 }
