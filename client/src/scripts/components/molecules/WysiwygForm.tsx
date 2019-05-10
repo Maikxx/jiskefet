@@ -28,7 +28,7 @@ export class WysiwygForm extends React.Component<Props> {
         return (
             <LanguageContext.Consumer>
                 {(language: Language) => (
-                    <form className={`WysiwygForm ${className}`} onSubmit={this.onSubmit}>
+                    <form className={`WysiwygForm ${className ? className : ''}`} onSubmit={this.onSubmit}>
                         <fieldset>
                             <div ref={this.editorRef} contentEditable={true} id={`editor`} suppressContentEditableWarning={true}>
                                 <p>{language.App.Wysiwyg.editorText}</p>
