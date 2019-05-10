@@ -62,6 +62,7 @@ Both the clients `src/sass` and `src/scripts` folders should have the following 
 * Ability to change the language of the whole page to one of the 14 most used languages.
 * Dark / Light mode
 * Editor (wysiwyg) that converts to markdown
+* Better error handling
 
 ## Design
 
