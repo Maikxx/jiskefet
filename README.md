@@ -156,4 +156,4 @@ For example the **trashcan** button when editing a **generic tag**. Obviously th
 ## License
 
 This repository is licensed as [MIT](LICENSE) by [Chelsea Doeleman](https://github.com/ChelseaDoeleman), [Robin Stut](https://github.com/RobinStut) and [Maikel van Veen](https://github.com/maikxx).
-<hr>
+
