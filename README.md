@@ -15,7 +15,8 @@ This demo is a collaboration between [Chelsea Doeleman](https://github.com/Chels
 * [Design](#Design)
 * [Process](#Process)
 * [Issues](#Issues)
-* [Resources](#Resources)
+* [Recourses](#Recourses)
+* [License](#License)
 
 ## Installation
 
@@ -64,7 +65,7 @@ Both the clients `src/sass` and `src/scripts` folders should have the following 
 
 ## Design
 
-Looking at the corporate identity of cern you find that they use a lot of blue, orange and greys. For this project we choose to go with the blue color for the dark theme, because blacks and a too high contrast can cause an eye strain. For the details in this page we used orange and color-variations that match the color or orange. 
+Looking at the corporate identity of cern you find that they use a lot of blue, orange and greys. For this project we choose to go with the blue color for the dark theme, because blacks and a too high contrast can cause an eye strain. For the details in this page we used orange and color-variations that match the color or orange.
 
 We really wanted to create a dark theme, so that users who work at night are able to give their eyes some rest by choosing the Dark theme. Because we didn't know the exact location where logs will be created in the ALICE system, we also created a light theme. So that when the evironment has to much light coming in, the user is still able to view their screen perfectly. For the light theme we also used a variation on the blue color, because white can also cause an eye strain.
 
@@ -78,7 +79,7 @@ Here we provide some sketches of our initials design. During development there w
 ![File](./docs/assets/dark-file.png)
 ![Edit](./docs/assets/dark-tag.png)
 ![Modal](./docs/assets/modal.png)
-    
+
 </details>
 
 <details>
@@ -87,7 +88,7 @@ Here we provide some sketches of our initials design. During development there w
 ![Body](./docs/assets/light.png)
 ![Tags](./docs/assets/light-tags.png)
 ![File](./docs/assets/light-file.png)
-    
+
 </details>
 
 To create an application for all users that will use the ALICE logging system, we made sure the user is able to change the language to what their most comfortable with.
@@ -97,10 +98,10 @@ To create an application for all users that will use the ALICE logging system, w
 These are some of the design principles we used and would like to hightlight.
 
 **Keep users in control**
-_"The obvious almost never is"_. To provide the user some feedback after some actions, we created an pop up message on the screen so that the user knows when their action worked or failed. 
+_"The obvious almost never is"_. To provide the user some feedback after some actions, we created an pop up message on the screen so that the user knows when their action worked or failed.
 
 **Keep secondary actions secondary**
-The main function of the logging page is creating a log in the _text-editor_. That's why tags and attachments come secondary and why they are positioned beneath the text-editor. 
+The main function of the logging page is creating a log in the _text-editor_. That's why tags and attachments come secondary and why they are positioned beneath the text-editor.
 
 **Progressive disclosure**
 For example the **trashcan** button when editing a **generic tag**. Obviously this will delete the tag, but by providing the user with a **modal** explaining the consquences of what will happen when they click, they get more information about this action. The modal comes secondary, so we don't over-explain all the elements in the interface.
@@ -112,6 +113,7 @@ For example the **trashcan** button when editing a **generic tag**. Obviously th
 * [ ] Drag & drop attachment (**NOT IN V1**)
 * [ ] Documentation
 * [ ] Enable typing markdown directly
+* [ ] Fix wysiwy edge cases and styling
 * [ ] Refactor client-side code into components (**NOT IN V1**)
 * [ ] Tag restriction - only some people can create (**NOT IN V1**)
 * [X] Editing tags
@@ -119,13 +121,7 @@ For example the **trashcan** button when editing a **generic tag**. Obviously th
 * [X] Remove tag confirm modal
 * [X] Restrict tags by name duplicated
 
-## Issues
-
-* Horizontal line styling
-* Blockquote styling
-* Refactor `collapsible` into it's own component
-
-## Resources
+## Recourses
 
 * Icons
     * [Lamp](https://www.flaticon.com/free-icon/lamp_1437117)
