@@ -181,38 +181,46 @@ function name(newChar, lastChar, lastSixChars, e, secondLast) {
         console.log(secondLast);
         // var typedHeading;
 
+        // Werkt -- checkt begin van italic markdown
         if (((lastChar === '*' || lastChar === '_') && (newChar !== lastChar)) && (lastChar !== secondLast) && (checkTag.includes('</') === false)) {
             console.log('italic');
             textField.innerHTML = textField.innerHTML.slice(0, -1) + `<em>${newChar}</em>`
             placeCaretAtEnd(textField);
 
         }
+        // Werkt -- checkt begin van bold markdown
         if ((lastChar === '*' || lastChar === '_') && (lastChar === secondLast) && (checkTag.includes('</') === false)) {
             console.log('bold');
             textField.innerHTML = textField.innerHTML.slice(0, -1) + `<b>${newChar}</b>`
             placeCaretAtEnd(textField);
         }
+        // Werkt -- checkt begin van strikeThrough markdown
         if ((lastChar === '~') && (lastChar === secondLast) && (checkTag.includes('</') === false)) {
             console.log('strikethrough');
             textField.innerHTML = textField.innerHTML.slice(0, -1) + `<strike>${newChar}</strike>`
             placeCaretAtEnd(textField);
         }
+
+        // Nog niet af
         if ((newChar === '+' || newChar === '-') && (lastChar === '/')) {
             console.log('bullitpoint');
         }
+        // Nog niet af
         if ((newChar === '[') && (lastChar !== '!')) {
             console.log('link');
         }
+        // Nog niet af
         if ((newChar === '[') && (lastChar === '!')) {
             console.log('image');
         }
+        // Nog niet af
         if (((lastChar !== '#') && (newChar === '#')) || ((lastChar = '#') && (newChar === '#')) && (checkTag.includes('</') === false)) {
             var countHeadingLvl = String(lastSixChars.replace(/[^#]/g, "").length);
             var typedHeading = 'h' + countHeadingLvl;
             console.log(typedHeading);
         }
 
-
+        // Werkt -- checkt of Italic markdown wordt afgesloten
         if (((checkTag === '</em>') && (lastChar !== '*') && (newChar === '*') && (e.keyCode !== 32))) {
             console.log('closingTag');
             var FirstInnerHtmlValue = String(textField.innerHTML).slice(0, -(checkTag.length + 1))
@@ -222,6 +230,7 @@ function name(newChar, lastChar, lastSixChars, e, secondLast) {
             textField.innerHTML = `${FirstInnerHtmlValue}${LastInnerHtmlValue}${newChar}`
             placeCaretAtEnd(textField);
         }
+        // Werkt -- checkt of Bold markdown wordt afgesloten
         if (((checkTag === '</b>') && (newChar === '*' || newChar === '_') && (e.keyCode !== 32))) {
             console.log('closing bold');
             console.log(lastChar);
@@ -230,6 +239,7 @@ function name(newChar, lastChar, lastSixChars, e, secondLast) {
             textField.innerHTML = FirstInnerHtmlValue + LastInnerHtmlValue + newChar;
             placeCaretAtEnd(textField);
         }
+        // Werkt -- checkt of StrikeThrough markdown wordt afgesloten
         if (((checkTag === '</strike>') && (newChar === '~') && (e.keyCode !== 32))) {
             console.log('closing bold');
             console.log(lastChar);
@@ -239,13 +249,14 @@ function name(newChar, lastChar, lastSixChars, e, secondLast) {
             placeCaretAtEnd(textField);
         }
 
-
+        // nog niet af
         if (newChar === 'Backspace') {
             console.log('backspace');
         }
     }, 0)
 }
 
+//Werkt --- Zet de caret op de juiste plek
 function placeCaretAtEnd(el) {
     el.focus();
     if (typeof window.getSelection != "undefined" &&
