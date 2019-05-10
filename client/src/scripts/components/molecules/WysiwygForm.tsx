@@ -19,11 +19,20 @@ interface Props {
     onSubmit: (newValue: string) => void
 }
 
-export class WysiwygForm extends React.Component<Props> {
+interface State {
+    dangerouslySetInnerHTML: string
+}
+
+export class WysiwygForm extends React.Component<Props, State> {
+    public state: State = {
+        dangerouslySetInnerHTML: (this.context as Language).App.Wysiwyg.editorText,
+    }
+
     private editorRef = React.createRef<HTMLDivElement>()
 
     public render() {
         const { className } = this.props
+        const { dangerouslySetInnerHTML } = this.state
 
         return (
             <LanguageContext.Consumer>
@@ -36,11 +45,8 @@ export class WysiwygForm extends React.Component<Props> {
                                 id={`editor`}
                                 suppressContentEditableWarning={true}
                                 onKeyDown={this.onKeyDown}
-                            >
-                                <p>
-                                    {language.App.Wysiwyg.editorText}
-                                </p>
-                            </div>
+                                dangerouslySetInnerHTML={{ __html: dangerouslySetInnerHTML }}
+                            />
                             <Button type='submit'>
                                 {language.App.Wysiwyg.convertToMarkdown}
                             </Button>
@@ -93,13 +99,18 @@ export class WysiwygForm extends React.Component<Props> {
             const textField = this.editorRef.current
 
             if (textField) {
-                const checkTag = String(textField.innerHTML).slice(-12)
+                let checkTag = String(textField.innerHTML).slice(-12)
+                const rx1 = /(<\/[\w\d]*>)/g
+                checkTag.replace(rx1, (...x): any => {
+                    checkTag = x[0]
+                })
                 let closingTagFix = (String(textField.innerHTML).slice(-(checkTag.length + 3)))
                 closingTagFix = closingTagFix.slice(0, 1)
 
                 // Werkt -- checkt begin van italic markdown
                 if (((lastChar === '*' || lastChar === '_') && (newChar !== lastChar)) && (lastChar !== secondLast) && (checkTag.includes('</') === false)) {
                     console.log('italic')
+                    this.setState({ dangerouslySetInnerHTML: `${textField.innerHTML.slice(0, -1)}<em>${newChar}</em>` })
                     textField.innerHTML = `${textField.innerHTML.slice(0, -1)}<em>${newChar}</em>`
                     this.placeCaretAtEnd(textField)
 
@@ -107,6 +118,7 @@ export class WysiwygForm extends React.Component<Props> {
                 // Werkt -- checkt begin van bold markdown
                 if ((lastChar === '*' || lastChar === '_') && (lastChar === secondLast) && (checkTag.includes('</') === false)) {
                     console.log('bold')
+                    this.setState({ dangerouslySetInnerHTML: `${textField.innerHTML.slice(0, -1)}<b>${newChar}</b>` })
                     textField.innerHTML = `${textField.innerHTML.slice(0, -1)}<b>${newChar}</b>`
                     this.placeCaretAtEnd(textField)
                 }
@@ -138,6 +150,7 @@ export class WysiwygForm extends React.Component<Props> {
                 }
 
                 // Werkt -- checkt of Italic markdown wordt afgesloten
+                console.log(checkTag, lastChar, newChar)
                 if (((checkTag === '</em>') && (lastChar !== '*') && (newChar === '*') && (e.keyCode !== 32))) {
                     console.log('closingTag')
                     const FirstInnerHtmlValue = String(textField.innerHTML).slice(0, -(checkTag.length + 1))
@@ -196,3 +209,5 @@ export class WysiwygForm extends React.Component<Props> {
         }
     }
 }
+
+WysiwygForm.contextType = LanguageContext
