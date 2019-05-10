@@ -89,6 +89,8 @@ Here we provide some sketches of our initials design. During development there w
     
 </details>
 
+To create an application for all users that will use the ALICE logging system, we made sure the user is able to change the language to what their most comfortable with.
+
 ### Design princicples
 
 These are some of the design principles we used and would like to hightlight.
