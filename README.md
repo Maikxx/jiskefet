@@ -4,6 +4,8 @@ This project aims to create a working demo for an enhancement of the ALICE loggi
 
 This demo is a collaboration between [Chelsea Doeleman](https://github.com/ChelseaDoeleman), [Robin Stut](https://github.com/RobinStut) and [Maikel van Veen](https://github.com/Maikxx).
 
+![App](./docs/assets/app.png)
+
 ## Table of contents
 
 * [Installation](#Installation)
