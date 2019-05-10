@@ -109,6 +109,7 @@ For example the **trashcan** button when editing a **generic tag**. Obviously th
 
 ## Process
 
+* [ ] Add toast message translations
 * [ ] Enable typing markdown directly
 * [ ] Fix wysiwy edge cases and styling
 * [X] Documentation
