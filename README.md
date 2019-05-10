@@ -128,6 +128,17 @@ For example the **trashcan** button when editing a **generic tag**. Obviously th
 
 ## Recourses
 
+* [React](https://reactjs.org/)
+* [Typescript](https://www.typescriptlang.org/)
+* [Parcel bundler](https://parceljs.org/)
+* [Socket.io](https://socket.io/)
+* [Sass](https://sass-lang.com/)
+* [Babel](https://babeljs.io/)
+* Server 
+    * [Express](https://expressjs.com/)
+    * [Helmet](https://helmetjs.github.io/)
+    * [Body parser](https://www.npmjs.com/package/body-parser)
+    * [Node](https://nodejs.org/en/)
 * Icons
     * [Lamp](https://www.flaticon.com/free-icon/lamp_1437117)
     * [Docs](https://www.flaticon.com/free-icon/docs_1295567)
@@ -140,6 +151,9 @@ For example the **trashcan** button when editing a **generic tag**. Obviously th
 * Modal
     * [React-modal](https://github.com/reactjs/react-modal)
     * [@types/react-modal](https://www.npmjs.com/package/@types/react-modal)
+* [React-Toastify](https://github.com/fkhadra/react-toastify)
+
+
 
 ## License
 
