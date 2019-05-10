@@ -30,7 +30,7 @@ export class WysiwygForm extends React.Component<Props> {
                 {(language: Language) => (
                     <form className={`WysiwygForm ${className}`} onSubmit={this.onSubmit}>
                         <fieldset>
-                            <div ref={this.editorRef} contentEditable={true} id={`editor`}>
+                            <div ref={this.editorRef} contentEditable={true} id={`editor`} suppressContentEditableWarning={true}>
                                 <p>{language.App.Wysiwyg.editorText}</p>
                             </div>
                             <Button type='submit'>{language.App.Wysiwyg.convertToMarkdown}</Button>
