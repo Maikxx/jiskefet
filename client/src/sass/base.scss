@@ -135,12 +135,12 @@ h1, h2, h3, h4 {
     justify-content: center;
     align-items:center;
     padding: .5em;
+    transition: all .2s ease;
 }
 
 #switch:hover,
 #switch:focus {
     color: #E88626;
-    transition: all .2s ease;
 }
 
 .class-1{fill: #324858;}.class-2{fill: #8ea5b5;}.class-3{fill: #1c2c38;}.class-4{fill: #fff;}.class-5{fill: #e2ecf5;}.class-bulb{fill:#1c2c38}
